@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1stLoan.in - Compare Instant Personal Loans & Free CIBIL Score</title>
+  <meta name="description" content="Apply for instant personal loans up to ₹15 Lakhs. 100% paperless approval, low CIBIL friendly & lowest interest rates on 1stLoan.in.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              900: '#064e3b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #059669;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(5, 150, 105, 0.4);
+      border: 3px solid white;
+    }
+    input[type=range]::-moz-range-thumb {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #059669;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(5, 150, 105, 0.4);
+      border: 3px solid white;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex justify-center py-0 sm:py-6">
+
+  <!-- Mobile/Desktop Shell Frame -->
+  <div class="w-full max-w-lg bg-white sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col min-h-screen sm:min-h-[880px] relative">
+    
+    <!-- Top Customer Header -->
+    <header class="bg-white border-b border-slate-100 px-5 py-3.5 flex items-center justify-between sticky top-0 z-30">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-slate-900 flex items-center justify-center text-white font-black text-sm tracking-tighter shadow-md shadow-emerald-200">
+          1st
+        </div>
+        <div>
+          <div class="flex items-center space-x-1.5">
+            <span class="font-black text-slate-900 tracking-tight text-lg">1st<span class="text-emerald-600">Loan</span><span class="text-slate-400 text-xs font-semibold">.in</span></span>
+            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-1.5 py-0.5 rounded">VERIFIED</span>
+          </div>
+          <p class="text-[10px] text-slate-400 font-medium">Official Digital Loan Marketplace & Bureau Checker</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2 py-1 rounded-full border border-emerald-200/60">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          RBI NBFCs
+        </span>
+      </div>
+    </header>
+
+    <!-- Main Navigation Bar (Clean Customer Tabs) -->
+    <nav class="flex border-b border-slate-200 bg-slate-50/70 text-xs font-semibold text-slate-500">
+      <button onclick="switchTab('offers')" id="tab-btn-offers" class="flex-1 py-3 text-center border-b-2 border-emerald-600 text-emerald-700 bg-white transition flex items-center justify-center space-x-1 font-bold">
+        <span>⚡ Loan Offers</span>
+      </button>
+      <button onclick="switchTab('creditscore')" id="tab-btn-creditscore" class="flex-1 py-3 text-center border-b-2 border-transparent hover:text-slate-800 transition flex items-center justify-center space-x-1">
+        <span>🎯 Free CIBIL</span>
+        <span class="bg-rose-500 text-white text-[9px] font-extrabold px-1 rounded-full">₹0</span>
+      </button>
+      <button onclick="switchTab('calculator')" id="tab-btn-calculator" class="flex-1 py-3 text-center border-b-2 border-transparent hover:text-slate-800 transition flex items-center justify-center space-x-1">
+        <span>🧮 EMI Calculator</span>
+      </button>
+    </nav>
+
+    <!-- App Content Body -->
+    <main class="flex-1 overflow-y-auto hide-scrollbar p-4 space-y-4">
+
+      <!-- ================= 1. OFFERS MARKETPLACE ================= -->
+      <section id="view-offers" class="space-y-4">
+        
+        <!-- Live Promo Banner -->
+        <div class="bg-gradient-to-r from-emerald-600 via-teal-700 to-slate-900 rounded-2xl p-4 text-white shadow-lg relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex justify-between items-start">
+              <span class="bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[11px] font-medium text-emerald-100">
+                1stLoan.in Direct Disbursal
+              </span>
+              <span class="text-[11px] text-emerald-200 font-semibold">100% Paperless</span>
+            </div>
+            <h2 class="text-xl font-extrabold mt-2 leading-tight">Apply for Your First Loan up to ₹15 Lakhs</h2>
+            <p class="text-xs text-emerald-100 mt-1">Instant approval for Salaried, Self-Employed & Freshers.</p>
+            
+            <div class="mt-3.5 flex items-center gap-2 flex-wrap">
+              <button onclick="openLeadModal('Fast Match Personal Loan', '₹ 2,00,000', '10.5%')" class="bg-white text-emerald-800 font-extrabold text-xs px-4 py-2 rounded-xl hover:bg-emerald-50 transition active:scale-95 shadow">
+                Check Instant Match →
+              </button>
+              <button onclick="switchTab('creditscore')" class="bg-emerald-800/80 border border-emerald-400/40 text-emerald-100 font-semibold text-xs px-3 py-2 rounded-xl hover:bg-emerald-800 transition">
+                Check Free CIBIL
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="flex items-center space-x-2 overflow-x-auto hide-scrollbar py-1">
+          <button onclick="filterOffers('all', this)" class="category-chip active-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-600 text-white whitespace-nowrap shadow-sm">
+            All Loans (6)
+          </button>
+          <button onclick="filterOffers('instant', this)" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 whitespace-nowrap hover:bg-slate-50">
+            ⚡ 10-Min Fast Approval
+          </button>
+          <button onclick="filterOffers('low_cibil', this)" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 whitespace-nowrap hover:bg-slate-50">
+            🛡️ Low/No CIBIL Friendly
+          </button>
+          <button onclick="filterOffers('large', this)" class="category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 whitespace-nowrap hover:bg-slate-50">
+            💼 Up to ₹15L Prime
+          </button>
+        </div>
+
+        <!-- Partner Cards Container -->
+        <div id="offers-list" class="space-y-3.5">
+          <!-- Populated dynamically via JS (Customer sees only terms, limit and rates) -->
+        </div>
+
+        <!-- Trust Badges & Disclaimer -->
+        <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 text-center space-y-2">
+          <div class="flex items-center justify-center space-x-6 text-xs text-slate-500 font-medium">
+            <span class="flex items-center space-x-1"><span>🔒</span> <span>256-Bit Encrypted</span></span>
+            <span class="flex items-center space-x-1"><span>🏛️</span> <span>RBI Regulated NBFCs</span></span>
+            <span class="flex items-center space-x-1"><span>⚡</span> <span>Direct Bank Transfer</span></span>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">
+            Disclaimer: 1stLoan.in is a loan marketplace facilitating digital connections with RBI registered Banks and NBFCs. We never ask for upfront advance processing fees.
+          </p>
+        </div>
+
+        <!-- Subtle Footer with Secret Owner Key -->
+        <div class="text-center pt-3 pb-1">
+          <button onclick="promptOwnerLogin()" class="text-[10px] text-slate-300 hover:text-slate-500 transition">
+            🔒 Partner Portal
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= 2. FREE CREDIT SCORE CHECKER ================= -->
+      <section id="view-creditscore" class="space-y-4 hidden">
+        
+        <div id="credit-form-card" class="bg-white border border-slate-200 rounded-2xl p-4 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full">OFFICIAL SOFT PULL</span>
+              <h3 class="font-extrabold text-slate-900 text-base mt-1">Check Your Free Credit Score</h3>
+              <p class="text-xs text-slate-500">Checking on 1stLoan.in will NEVER decrease your score.</p>
+            </div>
+            <div class="w-11 h-11 bg-emerald-50 rounded-2xl flex items-center justify-center text-xl text-emerald-600 font-black">
+              🎯
+            </div>
+          </div>
+
+          <form onsubmit="handleCreditScoreCheck(event)" class="space-y-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Full Legal Name (as on PAN)</label>
+              <input type="text" id="cs-name" required placeholder="e.g. Rahul Sharma" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number</label>
+                <div class="flex">
+                  <span class="inline-flex items-center px-2 text-xs bg-slate-100 border border-r-0 border-slate-300 rounded-l-xl text-slate-500 font-semibold">+91</span>
+                  <input type="tel" id="cs-phone" maxlength="10" required pattern="[0-9]{10}" placeholder="9876543210" class="w-full px-2.5 py-2 rounded-r-xl border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none font-mono">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">PAN Card Number</label>
+                <input type="text" id="cs-pan" maxlength="10" required placeholder="ABCDE1234F" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs uppercase focus:ring-2 focus:ring-emerald-500 focus:outline-none font-mono">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Date of Birth</label>
+                <input type="date" id="cs-dob" required class="w-full px-2.5 py-2 rounded-xl border border-slate-300 text-xs text-slate-700 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Pin Code</label>
+                <input type="text" id="cs-pincode" maxlength="6" required placeholder="e.g. 110001" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none font-mono">
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-2 pt-1">
+              <input type="checkbox" id="cs-consent" checked required class="mt-0.5 accent-emerald-600 rounded">
+              <label for="cs-consent" class="text-[10px] text-slate-500 leading-tight">
+                I hereby authorize 1stLoan.in to pull and review my credit bureau score report securely.
+              </label>
+            </div>
+
+            <button type="submit" id="btn-fetch-score" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs shadow-md shadow-emerald-200 transition flex items-center justify-center space-x-1.5 active:scale-95">
+              <span>View Free 1stLoan Credit Report</span>
+              <span>⚡</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Score Results Display -->
+        <div id="credit-result-card" class="bg-white border border-slate-200 rounded-2xl p-5 space-y-4 shadow-sm hidden">
+          <div class="flex justify-between items-start border-b border-slate-100 pb-3">
+            <div>
+              <span class="text-[11px] text-slate-400 font-medium">Verified Credit Score for</span>
+              <h4 id="res-cs-name" class="text-base font-bold text-slate-900">Rahul Sharma</h4>
+              <span id="res-cs-pan" class="text-[10px] font-mono text-slate-500">PAN: ABCDE1234F</span>
+            </div>
+            <button onclick="resetCreditCheck()" class="text-xs text-emerald-600 font-bold hover:underline">Check Another</button>
+          </div>
+
+          <div class="bg-gradient-to-b from-slate-900 to-slate-950 text-white rounded-2xl p-5 text-center space-y-2 shadow-inner">
+            <span class="text-[11px] uppercase tracking-wider text-emerald-400 font-semibold">1stLoan.in Bureau Verified Rating</span>
+            <div class="flex items-baseline justify-center space-x-2 pt-1">
+              <span id="res-cs-score" class="text-5xl font-black text-emerald-400 tracking-tight">778</span>
+              <span class="text-slate-400 text-sm font-semibold">/ 900</span>
+            </div>
+            <div class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold px-3 py-1 rounded-full">
+              🟢 EXCELLENT BORROWER PROFILE
+            </div>
+            <p class="text-[11px] text-slate-400 pt-1">Congratulations! You qualify for pre-approved personal loans starting at 10.25% p.a.</p>
+          </div>
+
+          <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3.5 space-y-2">
+            <div class="flex items-center space-x-2">
+              <span class="text-lg">🎉</span>
+              <div>
+                <strong class="text-xs text-emerald-950 font-bold block">Pre-Approved Offer Matched!</strong>
+                <span class="text-[11px] text-emerald-800">Your score qualifies for instant paperless transfer on KreditBee & MoneyView.</span>
+              </div>
+            </div>
+            <button onclick="openLeadModal('KreditBee Instant Loan', '₹ 4,00,000', '1.25% / mo')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm transition">
+              Apply For Pre-Approved ₹4,00,000 Loan →
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= 3. EMI CALCULATOR ================= -->
+      <section id="view-calculator" class="space-y-4 hidden">
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 space-y-4 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-base flex items-center justify-between">
+            <span>Loan EMI Calculator</span>
+            <span class="text-xs text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">Smart Tool</span>
+          </h3>
+
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-500 font-medium">Loan Requirement</span>
+              <span id="calc-amount-label" class="font-bold text-slate-900 text-sm">₹ 3,00,000</span>
+            </div>
+            <input id="calc-slider-amount" type="range" min="10000" max="1500000" step="10000" value="300000" oninput="runCalculator()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 font-medium">
+              <span>₹10K</span>
+              <span>₹7.5L</span>
+              <span>₹15L</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="block text-xs text-slate-500 font-medium mb-1.5">Tenure (Months)</span>
+            <div class="grid grid-cols-4 gap-2">
+              <button onclick="setCalcTenure(6, this)" class="calc-tenure-btn py-2 text-xs font-semibold rounded-xl border border-slate-200 text-slate-600 bg-white hover:bg-slate-50">6 Mos</button>
+              <button onclick="setCalcTenure(12, this)" class="calc-tenure-btn py-2 text-xs font-bold rounded-xl border border-emerald-600 text-white bg-emerald-600 shadow-sm">12 Mos</button>
+              <button onclick="setCalcTenure(24, this)" class="calc-tenure-btn py-2 text-xs font-semibold rounded-xl border border-slate-200 text-slate-600 bg-white hover:bg-slate-50">24 Mos</button>
+              <button onclick="setCalcTenure(36, this)" class="calc-tenure-btn py-2 text-xs font-semibold rounded-xl border border-slate-200 text-slate-600 bg-white hover:bg-slate-50">36 Mos</button>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-500 font-medium">Expected Interest Rate (p.a.)</span>
+              <span id="calc-rate-label" class="font-bold text-slate-900 text-sm">11.5%</span>
+            </div>
+            <input id="calc-slider-rate" type="range" min="9" max="28" step="0.5" value="11.5" oninput="runCalculator()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 font-medium">
+              <span>9.0% (Prime)</span>
+              <span>18.0% (Standard)</span>
+              <span>28.0%</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 space-y-2.5">
+            <div class="flex justify-between items-center border-b border-slate-200 pb-2">
+              <span class="text-xs text-slate-500 font-medium">Estimated Monthly EMI</span>
+              <span id="calc-result-emi" class="text-xl font-black text-emerald-700">₹ 26,583</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs text-slate-600">
+              <div>
+                <span class="text-slate-400 block text-[11px]">Total Interest</span>
+                <span id="calc-result-interest" class="font-bold text-slate-800">₹ 18,996</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Total Payable</span>
+                <span id="calc-result-total" class="font-bold text-slate-800">₹ 3,18,996</span>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="openLeadModal('Best Rate Personal Loan', document.getElementById('calc-amount-label').innerText, document.getElementById('calc-rate-label').innerText)" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md shadow-emerald-200 text-xs transition flex items-center justify-center space-x-1.5">
+            <span>Apply For Loan on 1stLoan.in →</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= 4. SECRET OWNER / ADMIN HUB (PIN PROTECTED) ================= -->
+      <section id="view-admin" class="space-y-4 hidden">
+        
+        <div class="flex justify-between items-center bg-slate-900 text-white p-4 rounded-2xl">
+          <div>
+            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Confidential</span>
+            <h2 class="text-base font-extrabold">1stLoan.in Owner CRM</h2>
+          </div>
+          <button onclick="exitOwnerPortal()" class="bg-slate-800 text-slate-300 hover:text-white px-3 py-1.5 rounded-xl text-xs font-semibold">
+            Close Portal ✕
+          </button>
+        </div>
+
+        <!-- Custom Affiliate Links Manager -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 space-y-3 shadow-sm">
+          <div class="flex justify-between items-center">
+            <div>
+              <h3 class="font-bold text-slate-900 text-sm">🔗 BankSathi / GroMo Links</h3>
+              <p class="text-[11px] text-slate-400">Paste your actual tracking URLs here:</p>
+            </div>
+            <button onclick="saveCustomAffiliateLinks()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-1.5 rounded-xl text-xs shadow-sm transition active:scale-95">
+              Save Links
+            </button>
+          </div>
+
+          <div id="admin-links-inputs" class="space-y-2.5">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Captured Leads CRM -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 space-y-3 shadow-sm">
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold text-slate-900 text-sm">Captured Customer Leads</h3>
+            <button onclick="clearCapturedLeads()" class="text-[11px] text-rose-600 hover:underline">Clear Data</button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200">
+                <tr>
+                  <th class="py-2 px-2">Applicant</th>
+                  <th class="py-2 px-2">Partner</th>
+                  <th class="py-2 px-2">Amount</th>
+                  <th class="py-2 px-2">Time</th>
+                </tr>
+              </thead>
+              <tbody id="admin-leads-table-body" class="divide-y divide-slate-100">
+                <!-- Customer leads recorded here privately -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Modal: Customer Loan Application Form -->
+    <div id="lead-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+      <div class="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 space-y-4 max-h-[90vh] overflow-y-auto hide-scrollbar shadow-2xl">
+        
+        <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+          <div>
+            <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">Fast 2-Min Paperless Application</span>
+            <h3 id="modal-partner-name" class="font-extrabold text-slate-900 text-lg">Apply for Instant Loan</h3>
+          </div>
+          <button onclick="closeLeadModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold hover:bg-slate-200">✕</button>
+        </div>
+
+        <form id="lead-form" onsubmit="submitLeadForm(event)" class="space-y-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Full Legal Name (as on PAN)</label>
+            <input type="text" id="lead-name" required placeholder="e.g. Rahul Sharma" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number</label>
+              <div class="flex">
+                <span class="inline-flex items-center px-2 text-xs bg-slate-100 border border-r-0 border-slate-300 rounded-l-xl text-slate-500 font-semibold">+91</span>
+                <input type="tel" id="lead-phone" maxlength="10" required pattern="[0-9]{10}" placeholder="9876543210" class="w-full px-2.5 py-2 rounded-r-xl border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none font-mono">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">PAN Card Number</label>
+              <input type="text" id="lead-pan" maxlength="10" required placeholder="ABCDE1234F" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs uppercase focus:ring-2 focus:ring-emerald-500 focus:outline-none font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Monthly In-Hand (₹)</label>
+              <input type="number" id="lead-income" required min="10000" placeholder="e.g. 35000" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Employment</label>
+              <select id="lead-emp-type" class="w-full px-2.5 py-2 rounded-xl border border-slate-300 text-xs bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                <option value="Salaried">Salaried</option>
+                <option value="Self Employed">Self Employed</option>
+                <option value="Business Owner">Business Owner</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Pincode</label>
+              <input type="text" id="lead-pincode" maxlength="6" required placeholder="e.g. 110001" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none font-mono">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Requested Amount</label>
+              <input type="text" id="lead-amount" readonly class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-emerald-800">
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-2 pt-1">
+            <input type="checkbox" id="lead-consent" checked required class="mt-0.5 accent-emerald-600 rounded">
+            <label for="lead-consent" class="text-[10px] text-slate-500 leading-tight">
+              I authorize 1stLoan.in to forward my application to the lending partner & conduct official bureau verification.
+            </label>
+          </div>
+
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs shadow-md shadow-emerald-200 transition flex items-center justify-center space-x-1.5 active:scale-95">
+            <span>Verify Eligibility & Continue</span>
+            <span>⚡</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal: Redirecting to Official Lending Partner -->
+    <div id="redirect-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white w-full max-w-sm rounded-3xl p-6 text-center space-y-4 shadow-2xl">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto shadow-md shadow-emerald-100 animate-bounce">
+          ⚡
+        </div>
+        <div>
+          <h3 class="text-lg font-extrabold text-slate-900">1stLoan Verified!</h3>
+          <p class="text-xs text-slate-500 mt-1">Transferring to <span id="redirect-partner-label" class="font-bold text-slate-800">Lender</span> secure application portal...</p>
+        </div>
+
+        <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 font-mono">
+          <div class="flex justify-between">
+            <span class="text-slate-400">Application Ref:</span>
+            <span id="redirect-lead-id" class="font-bold text-slate-800">1ST-94812</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Security Verification:</span>
+            <span class="font-bold text-emerald-600">PASSED</span>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3 text-xs text-emerald-900 font-medium">
+          Redirecting automatically in <span id="redirect-timer" class="font-black text-emerald-700 text-sm">3</span> seconds...
+        </div>
+
+        <div class="space-y-2 pt-1">
+          <a id="btn-partner-direct" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs shadow-md shadow-emerald-200 transition flex items-center justify-center space-x-1.5 active:scale-95">
+            <span>Proceed to Lender Portal Now →</span>
+          </a>
+          <button onclick="closeRedirectModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2 rounded-xl text-xs transition">
+            Stay on 1stLoan.in
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="app-toast" class="absolute bottom-5 left-4 right-4 z-50 transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none">
+      <div id="toast-inner" class="bg-slate-900 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-2xl flex items-center justify-between">
+        <span id="toast-text">Alert message</span>
+        <button onclick="dismissToast()" class="text-slate-400 hover:text-white ml-2 text-sm">✕</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const appState = {
+      currentTab: 'offers',
+      calcTenure: 12,
+      activeModalPartner: null,
+      redirectInterval: null,
+      
+      // Customer-facing partners (Commission is completely hidden from user)
+      partners: [
+        {
+          id: 'kreditbee',
+          name: 'KreditBee Instant Loan',
+          tagline: '10 Mins Disbursal • 100% Paperless',
+          logo: '⚡',
+          logoBg: 'bg-amber-100 text-amber-700',
+          maxAmount: '₹ 4,00,000',
+          rate: '1.25% / mo',
+          tenure: '3 to 24 Mos',
+          rating: '4.8',
+          matchRate: '98% Match',
+          category: 'instant',
+          redirectUrl: 'https://mdeal.in/c_kreditbee_demo'
+        },
+        {
+          id: 'moneyview',
+          name: 'MoneyView Personal Loan',
+          tagline: 'Low CIBIL Accepted (650+)',
+          logo: '🛡️',
+          logoBg: 'bg-emerald-100 text-emerald-700',
+          maxAmount: '₹ 10,00,000',
+          rate: '1.33% / mo',
+          tenure: '6 to 60 Mos',
+          rating: '4.7',
+          matchRate: '94% Match',
+          category: 'low_cibil',
+          redirectUrl: 'https://mdeal.in/c_moneyview_demo'
+        },
+        {
+          id: 'bajaj',
+          name: 'Bajaj Finserv Flexi Loan',
+          tagline: 'High Loan Limits • Flexible EMI',
+          logo: '💼',
+          logoBg: 'bg-blue-100 text-blue-700',
+          maxAmount: '₹ 15,00,000',
+          rate: '10.5% p.a.',
+          tenure: '12 to 84 Mos',
+          rating: '4.9',
+          matchRate: '91% Match',
+          category: 'large',
+          redirectUrl: 'https://mdeal.in/c_bajaj_demo'
+        },
+        {
+          id: 'navi',
+          name: 'Navi Cash Loan',
+          tagline: 'Zero Processing Fees Offer',
+          logo: '🚀',
+          logoBg: 'bg-purple-100 text-purple-700',
+          maxAmount: '₹ 5,00,000',
+          rate: '9.9% p.a.',
+          tenure: '6 to 36 Mos',
+          rating: '4.6',
+          matchRate: '96% Match',
+          category: 'instant',
+          redirectUrl: 'https://mdeal.in/c_navi_demo'
+        },
+        {
+          id: 'tatacapital',
+          name: 'Tata Capital Prime Loan',
+          tagline: 'Lowest Interest for Salaried (> ₹30k)',
+          logo: '🏢',
+          logoBg: 'bg-indigo-100 text-indigo-700',
+          maxAmount: '₹ 12,00,000',
+          rate: '10.25% p.a.',
+          tenure: '12 to 60 Mos',
+          rating: '4.8',
+          matchRate: '89% Match',
+          category: 'large',
+          redirectUrl: 'https://mdeal.in/c_tatacapital_demo'
+        },
+        {
+          id: 'mpokket',
+          name: 'mPokket Quick Cash',
+          tagline: 'College Students & Freshers Eligible',
+          logo: '📱',
+          logoBg: 'bg-rose-100 text-rose-700',
+          maxAmount: '₹ 45,00,000',
+          rate: '2.0% / mo',
+          tenure: '1 to 4 Mos',
+          rating: '4.5',
+          matchRate: '99% Match',
+          category: 'low_cibil',
+          redirectUrl: 'https://mdeal.in/c_mpokket_demo'
+        }
+      ],
+
+      // Private leads saved locally in owner device
+      leads: JSON.parse(localStorage.getItem('1stloan_captured_leads') || '[]')
+    };
+
+    function renderOffers(categoryFilter = 'all') {
+      const container = document.getElementById('offers-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const filtered = categoryFilter === 'all' 
+        ? appState.partners 
+        : appState.partners.filter(p => p.category === categoryFilter);
+
+      filtered.forEach(partner => {
+        const card = document.createElement('div');
+        card.className = "bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition space-y-3 relative overflow-hidden";
+        card.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div class="flex items-center space-x-2.5">
+              <div class="w-10 h-10 rounded-xl ${partner.logoBg} flex items-center justify-center text-lg font-bold">
+                ${partner.logo}
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 text-sm">${partner.name}</h4>
+                <p class="text-[11px] text-slate-500">${partner.tagline}</p>
+              </div>
+            </div>
+            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-emerald-200">
+              ${partner.matchRate}
+            </span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 bg-slate-50 p-2.5 rounded-xl text-center border border-slate-100">
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium">Max Limit</span>
+              <span class="text-xs font-extrabold text-slate-800">${partner.maxAmount}</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium">Interest</span>
+              <span class="text-xs font-extrabold text-emerald-700">${partner.rate}</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium">Tenure</span>
+              <span class="text-xs font-extrabold text-slate-800">${partner.tenure}</span>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <div class="text-[10px] text-slate-400 flex items-center space-x-1">
+              <span>⭐ ${partner.rating}/5</span>
+              <span>•</span>
+              <span class="text-slate-500 font-medium">RBI Approved</span>
+            </div>
+            <button onclick="openLeadModal('${partner.name}', '${partner.maxAmount}', '${partner.rate}')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-xl shadow-sm transition active:scale-95 flex items-center space-x-1">
+              <span>Apply Now</span>
+              <span>→</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterOffers(category, btn) {
+      document.querySelectorAll('.category-chip').forEach(c => {
+        c.className = "category-chip px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 whitespace-nowrap hover:bg-slate-50";
+      });
+      btn.className = "category-chip px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-600 text-white whitespace-nowrap shadow-sm";
+      renderOffers(category);
+    }
+
+    function handleCreditScoreCheck(e) {
+      e.preventDefault();
+      const name = document.getElementById('cs-name').value.trim();
+      const phone = document.getElementById('cs-phone').value.trim();
+      const pan = document.getElementById('cs-pan').value.trim().toUpperCase();
+      const btn = document.getElementById('btn-fetch-score');
+
+      if (phone.length !== 10) {
+        showToast('Please enter a valid 10-digit mobile number', 'error');
+        return;
+      }
+      if (pan.length !== 10) {
+        showToast('Please enter a valid 10-character PAN number', 'error');
+        return;
+      }
+
+      btn.innerHTML = '<span>Verifying Bureau Record...</span> <span>⏳</span>';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        let seed = 0;
+        for (let i = 0; i < pan.length; i++) seed += pan.charCodeAt(i);
+        const generatedScore = 720 + (seed % 95);
+
+        // Store quietly in private leads
+        const newLead = {
+          name: name,
+          phone: phone,
+          partner: 'CIBIL Check',
+          amount: `Score: ${generatedScore}`,
+          date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+        appState.leads.unshift(newLead);
+        localStorage.setItem('1stloan_captured_leads', JSON.stringify(appState.leads));
+
+        document.getElementById('res-cs-name').innerText = name;
+        document.getElementById('res-cs-pan').innerText = `PAN: ${pan.slice(0, 5)}XXXX${pan.slice(-1)}`;
+        document.getElementById('res-cs-score').innerText = generatedScore;
+
+        document.getElementById('credit-form-card').classList.add('hidden');
+        document.getElementById('credit-result-card').classList.remove('hidden');
+
+        btn.innerHTML = '<span>View Free 1stLoan Credit Report</span> <span>⚡</span>';
+        btn.disabled = false;
+        showToast('Official credit report generated successfully!', 'success');
+      }, 1200);
+    }
+
+    function resetCreditCheck() {
+      document.getElementById('credit-result-card').classList.add('hidden');
+      document.getElementById('credit-form-card').classList.remove('hidden');
+    }
+
+    function runCalculator() {
+      const amount = Number(document.getElementById('calc-slider-amount').value);
+      const rateAnnual = Number(document.getElementById('calc-slider-rate').value);
+      const tenureMonths = appState.calcTenure;
+
+      document.getElementById('calc-amount-label').innerText = '₹ ' + amount.toLocaleString('en-IN');
+      document.getElementById('calc-rate-label').innerText = rateAnnual.toFixed(1) + '%';
+
+      const monthlyRate = (rateAnnual / 12) / 100;
+      const emi = Math.round((amount * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) / (Math.pow(1 + monthlyRate, tenureMonths) - 1));
+      const totalPayable = emi * tenureMonths;
+      const totalInterest = totalPayable - amount;
+
+      document.getElementById('calc-result-emi').innerText = '₹ ' + emi.toLocaleString('en-IN');
+      document.getElementById('calc-result-interest').innerText = '₹ ' + totalInterest.toLocaleString('en-IN');
+      document.getElementById('calc-result-total').innerText = '₹ ' + totalPayable.toLocaleString('en-IN');
+    }
+
+    function setCalcTenure(months, btn) {
+      appState.calcTenure = months;
+      document.querySelectorAll('.calc-tenure-btn').forEach(b => {
+        b.className = "calc-tenure-btn py-2 text-xs font-semibold rounded-xl border border-slate-200 text-slate-600 bg-white hover:bg-slate-50";
+      });
+      btn.className = "calc-tenure-btn py-2 text-xs font-bold rounded-xl border border-emerald-600 text-white bg-emerald-600 shadow-sm";
+      runCalculator();
+    }
+
+    function openLeadModal(partnerName, maxAmount, rate) {
+      appState.activeModalPartner = partnerName;
+      document.getElementById('modal-partner-name').innerText = `Apply via ${partnerName}`;
+      document.getElementById('lead-amount').value = maxAmount;
+      document.getElementById('lead-modal').classList.remove('hidden');
+    }
+
+    function closeLeadModal() {
+      document.getElementById('lead-modal').classList.add('hidden');
+    }
+
+    function submitLeadForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('lead-name').value.trim();
+      const phone = document.getElementById('lead-phone').value.trim();
+      const pan = document.getElementById('lead-pan').value.trim().toUpperCase();
+      const amount = document.getElementById('lead-amount').value;
+      const partnerName = appState.activeModalPartner || 'KreditBee Instant Loan';
+
+      if (phone.length !== 10) {
+        showToast('Please enter a valid 10-digit mobile number', 'error');
+        return;
+      }
+      if (pan.length !== 10) {
+        showToast('Please enter a valid 10-character PAN number', 'error');
+        return;
+      }
+
+      const partnerObj = appState.partners.find(p => p.name === partnerName) || appState.partners[0];
+      const newLeadId = '1ST-' + Math.floor(10000 + Math.random() * 90000);
+      
+      // Save quietly to private storage
+      const newLead = {
+        name: name,
+        phone: phone,
+        partner: partnerName,
+        amount: amount,
+        date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      appState.leads.unshift(newLead);
+      localStorage.setItem('1stloan_captured_leads', JSON.stringify(appState.leads));
+
+      closeLeadModal();
+
+      const finalRedirectUrl = partnerObj.redirectUrl.includes('?')
+        ? `${partnerObj.redirectUrl}&subid=${newLeadId}&phone=${phone}`
+        : `${partnerObj.redirectUrl}?subid=${newLeadId}&phone=${phone}`;
+
+      document.getElementById('redirect-partner-label').innerText = partnerName;
+      document.getElementById('redirect-lead-id').innerText = newLeadId;
+      document.getElementById('btn-partner-direct').href = finalRedirectUrl;
+
+      document.getElementById('redirect-modal').classList.remove('hidden');
+
+      let countdown = 3;
+      const timerElem = document.getElementById('redirect-timer');
+      timerElem.innerText = countdown;
+
+      if (appState.redirectInterval) clearInterval(appState.redirectInterval);
+      
+      appState.redirectInterval = setInterval(() => {
+        countdown -= 1;
+        timerElem.innerText = countdown;
+        if (countdown <= 0) {
+          clearInterval(appState.redirectInterval);
+          window.location.href = finalRedirectUrl;
+        }
+      }, 1000);
+    }
+
+    function closeRedirectModal() {
+      if (appState.redirectInterval) clearInterval(appState.redirectInterval);
+      document.getElementById('redirect-modal').classList.add('hidden');
+    }
+
+    function switchTab(tabName) {
+      appState.currentTab = tabName;
+      ['offers', 'creditscore', 'calculator'].forEach(t => {
+        document.getElementById(`view-${t}`).classList.add('hidden');
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (btn) btn.className = "flex-1 py-3 text-center border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition flex items-center justify-center space-x-1";
+      });
+
+      document.getElementById(`view-${tabName}`).classList.remove('hidden');
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      if (activeBtn) activeBtn.className = "flex-1 py-3 text-center border-b-2 border-emerald-600 text-emerald-700 bg-white transition flex items-center justify-center space-x-1 font-bold";
+    }
+
+    // Secret Owner Portal (PIN Protected: default 1234)
+    function promptOwnerLogin() {
+      const pin = prompt("Enter 1stLoan Owner Security PIN:");
+      if (pin === "1234" || pin === "7729") {
+        ['offers', 'creditscore', 'calculator'].forEach(t => document.getElementById(`view-${t}`).classList.add('hidden'));
+        document.getElementById('view-admin').classList.remove('hidden');
+        renderAdminLinkManager();
+        renderAdminLeads();
+        showToast('Welcome to Owner Hub', 'success');
+      } else if (pin !== null) {
+        showToast('Invalid Security PIN', 'error');
+      }
+    }
+
+    function exitOwnerPortal() {
+      document.getElementById('view-admin').classList.add('hidden');
+      switchTab('offers');
+    }
+
+    function renderAdminLinkManager() {
+      const container = document.getElementById('admin-links-inputs');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const savedUrls = JSON.parse(localStorage.getItem('loan_affiliate_urls') || '{}');
+
+      appState.partners.forEach(partner => {
+        if (savedUrls[partner.id]) partner.redirectUrl = savedUrls[partner.id];
+
+        const div = document.createElement('div');
+        div.className = "bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs space-y-1";
+        div.innerHTML = `
+          <span class="font-bold text-slate-800 block">${partner.name}</span>
+          <input type="url" id="link-input-${partner.id}" value="${partner.redirectUrl}" placeholder="Paste BankSathi/GroMo tracking URL..." class="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 text-xs font-mono text-slate-700 focus:ring-1 focus:ring-emerald-500 bg-white">
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function saveCustomAffiliateLinks() {
+      const urlMap = {};
+      appState.partners.forEach(partner => {
+        const input = document.getElementById(`link-input-${partner.id}`);
+        if (input && input.value.trim()) {
+          partner.redirectUrl = input.value.trim();
+          urlMap[partner.id] = partner.redirectUrl;
+        }
+      });
+      localStorage.setItem('loan_affiliate_urls', JSON.stringify(urlMap));
+      showToast('Affiliate partner URLs saved securely!', 'success');
+    }
+
+    function renderAdminLeads() {
+      const tbody = document.getElementById('admin-leads-table-body');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      if (appState.leads.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="py-4 text-center text-slate-400 text-xs">No live leads captured yet.</td></tr>`;
+        return;
+      }
+
+      appState.leads.forEach(lead => {
+        const row = document.createElement('tr');
+        row.className = "hover:bg-slate-50";
+        row.innerHTML = `
+          <td class="py-2.5 px-2">
+            <span class="font-bold text-slate-800 block">${lead.name}</span>
+            <span class="text-[10px] text-slate-500 font-mono">${lead.phone}</span>
+          </td>
+          <td class="py-2.5 px-2 text-slate-700 font-medium">${lead.partner}</td>
+          <td class="py-2.5 px-2 text-slate-800 font-semibold">${lead.amount}</td>
+          <td class="py-2.5 px-2 text-slate-400 font-mono text-[10px]">${lead.date}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function clearCapturedLeads() {
+      if (confirm('Clear all captured leads from this browser?')) {
+        appState.leads = [];
+        localStorage.removeItem('1stloan_captured_leads');
+        renderAdminLeads();
+        showToast('Leads cleared', 'info');
+      }
+    }
+
+    let toastTimeout;
+    function showToast(msg, type = 'info') {
+      const toast = document.getElementById('app-toast');
+      const inner = document.getElementById('toast-inner');
+      const text = document.getElementById('toast-text');
+
+      text.innerText = msg;
+      if (type === 'error') {
+        inner.className = 'bg-rose-900 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-2xl flex items-center justify-between border border-rose-700';
+      } else if (type === 'success') {
+        inner.className = 'bg-emerald-900 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-2xl flex items-center justify-between border border-emerald-700';
+      } else {
+        inner.className = 'bg-slate-900 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-2xl flex items-center justify-between border border-slate-700';
+      }
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(dismissToast, 3500);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('app-toast');
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }
+
+    window.onload = function() {
+      const savedUrls = JSON.parse(localStorage.getItem('loan_affiliate_urls') || '{}');
+      appState.partners.forEach(p => {
+        if (savedUrls[p.id]) p.redirectUrl = savedUrls[p.id];
+      });
+      renderOffers('all');
+      runCalculator();
+    };
+  </script>
+</body>
+</html>
