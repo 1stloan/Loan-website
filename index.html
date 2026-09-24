@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>1stLoan.in - Instant Loans & Free Credit Score</title>
-  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#059669">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +26,10 @@
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex justify-center selection:bg-emerald-500 selection:text-white">
 
-  <!-- Mobile Frame / App Container -->
+  <!-- Main Mobile Container -->
   <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative flex flex-col pb-24 border-x border-slate-200">
     
-    <!-- Top Header -->
+    <!-- Header -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md px-4 py-3 border-b border-slate-100 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-emerald-500/20">
@@ -46,27 +45,27 @@
         <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> RBI NBFCs
         </span>
-        <!-- Hidden Admin Lock Button -->
+        <!-- Partner Hub Lock -->
         <button onclick="promptAdminPin()" title="Partner Portal" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100 transition">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
         </button>
       </div>
     </header>
 
-    <!-- Main Content Area -->
+    <!-- Main Content -->
     <main class="flex-1 px-4 pt-4 space-y-5">
 
       <!-- Navigation Tabs -->
       <div class="flex p-1 bg-slate-100 rounded-xl font-semibold text-xs text-slate-600">
         <button onclick="switchTab('cibil')" id="tab-btn-cibil" class="flex-1 py-2 rounded-lg bg-white text-emerald-700 shadow-sm transition">🎯 CIBIL & Eligibility</button>
-        <button onclick="switchTab('loans')" id="tab-btn-loans" class="flex-1 py-2 rounded-lg text-slate-600 transition">⚡ Loan Offers</button>
+        <button onclick="switchTab('loans')" id="tab-btn-loans" class="flex-1 py-2 rounded-lg text-slate-600 transition">⚡ All Loans (6)</button>
         <button onclick="switchTab('emi')" id="tab-btn-emi" class="flex-1 py-2 rounded-lg text-slate-600 transition">🧮 EMI Calc</button>
       </div>
 
       <!-- TAB 1: CIBIL & ELIGIBILITY CHECK -->
       <section id="tab-cibil" class="space-y-4">
         
-        <!-- Official Bureau Callout Banner -->
+        <!-- Official Bureau Callout -->
         <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-3.5 rounded-2xl shadow-md shadow-emerald-500/15 flex items-center justify-between">
           <div class="space-y-0.5">
             <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-200">Official Bureau Report</span>
@@ -77,7 +76,7 @@
           </button>
         </div>
 
-        <!-- Clean Form: Name, Mobile, PAN, Income -->
+        <!-- 4-Field Simplified CIBIL Form -->
         <div id="cibil-form-card" class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-4">
           <div class="border-b border-slate-100 pb-2">
             <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
@@ -90,7 +89,7 @@
           <form id="cibilForm" onsubmit="handleCibilSubmit(event)" class="space-y-3">
             <div>
               <label class="block text-xs font-semibold text-slate-600 mb-1">Full Legal Name (as on PAN)</label>
-              <input type="text" id="custName" required placeholder="e.g. Rahul Sharma" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent font-medium">
+              <input type="text" id="custName" required placeholder="e.g. Rahul Sharma" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
             </div>
 
             <div class="grid grid-cols-2 gap-2">
@@ -109,13 +108,13 @@
 
             <div>
               <label class="block text-xs font-semibold text-slate-600 mb-1">Monthly In-Hand Salary / Income (₹)</label>
-              <input type="number" id="custIncome" required placeholder="e.g. 35000" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
+              <input type="number" id="custIncome" required placeholder="e.g. 25000" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
             </div>
 
             <div class="pt-1">
               <label class="flex items-start gap-2 cursor-pointer text-[10px] text-slate-500 leading-tight">
                 <input type="checkbox" checked required class="mt-0.5 rounded text-emerald-600 focus:ring-0">
-                <span>I authorize 1stLoan.in to assess my eligibility and forward my request to verified RBI lending partners.</span>
+                <span>I authorize 1stLoan.in to assess my profile and forward my request to verified RBI lending partners.</span>
               </label>
             </div>
 
@@ -126,10 +125,9 @@
           </form>
         </div>
 
-        <!-- CIBIL RESULT & CATEGORIZED LENDERS (Hidden until assessed) -->
+        <!-- CIBIL RESULT & CATEGORIZED LENDERS -->
         <div id="cibil-result-container" class="hidden space-y-4">
           
-          <!-- Score Dashboard Card -->
           <div class="bg-slate-900 text-white rounded-2xl p-4 shadow-lg border border-slate-800 relative overflow-hidden">
             <div class="flex justify-between items-start">
               <div>
@@ -146,27 +144,27 @@
             </div>
 
             <div class="mt-3 pt-3 border-t border-slate-800 text-[11px] text-slate-300 flex items-center justify-between">
-              <span id="resCustDisplay">Rahul Sharma • PAN: ABCDE****F</span>
-              <span class="text-emerald-400 font-semibold">Verified Match</span>
+              <span id="resCustDisplay">Customer Profile</span>
+              <span class="text-emerald-400 font-semibold">Matched Partners</span>
             </div>
           </div>
 
-          <!-- LENDER MATCH RESULTS: Categorized by Approval Chances -->
+          <!-- LENDER MATCH RESULTS -->
           <div class="space-y-2">
             <div class="flex items-center justify-between">
               <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider">Categorized Loan Matches</h3>
-              <span class="text-[10px] text-slate-500">Based on Income & Profile</span>
+              <span class="text-[10px] text-slate-500">Ranked by Approval Probability</span>
             </div>
             
             <div id="matched-lenders-list" class="space-y-2.5">
-              <!-- Dynamically rendered items -->
+              <!-- Rendered dynamically -->
             </div>
           </div>
         </div>
 
       </section>
 
-      <!-- TAB 2: ALL LOANS (DIRECT APPLY) -->
+      <!-- TAB 2: ALL LOANS -->
       <section id="tab-loans" class="hidden space-y-3">
         <div class="flex items-center justify-between px-1">
           <h2 class="font-bold text-slate-800 text-xs uppercase tracking-wider">All Verified Lending Partners</h2>
@@ -174,7 +172,7 @@
         </div>
 
         <div id="all-loans-list" class="space-y-2.5">
-          <!-- Dynamically populated from JS -->
+          <!-- Rendered dynamically -->
         </div>
       </section>
 
@@ -226,7 +224,7 @@
 
     </main>
 
-    <!-- FOOTER WITH SECRET LINK -->
+    <!-- FOOTER -->
     <footer class="mt-auto px-4 py-4 text-center border-t border-slate-100 bg-slate-50 space-y-1">
       <p class="text-[10px] text-slate-400">© 2026 1stLoan.in • Direct Digital Loan Aggregator</p>
       <div class="flex items-center justify-center gap-3 text-[10px] text-slate-400 font-medium">
@@ -238,12 +236,12 @@
       </div>
     </footer>
 
-    <!-- MODAL: QUICK APPLICATION MODAL -->
+    <!-- MODAL: APPLICATION DIALOG -->
     <div id="applyModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
       <div class="w-full max-w-md bg-white rounded-t-3xl sm:rounded-2xl p-5 space-y-4 max-h-[90vh] overflow-y-auto">
         <div class="flex justify-between items-center border-b border-slate-100 pb-3">
           <div>
-            <span class="text-[10px] uppercase font-bold text-emerald-600 tracking-wider">Fast 2-Min Paperless Application</span>
+            <span class="text-[10px] uppercase font-bold text-emerald-600 tracking-wider">Fast Paperless Application</span>
             <h3 id="modalLenderName" class="font-extrabold text-slate-900 text-base">Apply via Partner</h3>
           </div>
           <button onclick="closeApplyModal()" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200">✕</button>
@@ -266,32 +264,31 @@
             </div>
           </div>
 
-          <!-- Requested Loan Amount (100% Editable) -->
+          <!-- Requested Amount (Editable + Chips) -->
           <div>
             <div class="flex justify-between items-center mb-1">
               <label class="text-xs font-semibold text-slate-600">Requested Amount (₹)</label>
-              <span id="modalMaxLimitLabel" class="text-[10px] text-slate-400 font-medium">Max Limit: ₹10,00,000</span>
+              <span id="modalMaxLimitLabel" class="text-[10px] text-slate-400 font-medium">Max Limit: ₹5,00,000</span>
             </div>
             <input type="number" id="modalAmount" required placeholder="Enter amount, e.g. 50000" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500">
-            <!-- Quick Chips -->
             <div class="flex gap-1.5 mt-1.5">
+              <button type="button" onclick="setModalAmount(25000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹25K</button>
               <button type="button" onclick="setModalAmount(50000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹50K</button>
               <button type="button" onclick="setModalAmount(100000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹1 Lakh</button>
-              <button type="button" onclick="setModalAmount(250000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹2.5 Lakh</button>
-              <button type="button" onclick="setModalAmount(500000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹5 Lakh</button>
+              <button type="button" onclick="setModalAmount(200000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹2 Lakh</button>
             </div>
           </div>
 
           <div class="pt-2">
             <button type="submit" id="btnSubmitApply" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow-md shadow-emerald-600/25 flex items-center justify-center gap-1.5 transition">
-              <span>Verify Eligibility & Continue ⚡</span>
+              <span>Continue to Lending Partner ⚡</span>
             </button>
           </div>
         </form>
       </div>
     </div>
 
-    <!-- MODAL: PARTNER / ADMIN PORTAL (PIN PROTECTED) -->
+    <!-- MODAL: PARTNER / ADMIN PORTAL -->
     <div id="adminModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
       <div class="w-full max-w-sm bg-white rounded-2xl p-5 space-y-4 max-h-[85vh] overflow-y-auto">
         <div class="flex justify-between items-center border-b border-slate-100 pb-2">
@@ -303,7 +300,7 @@
         </div>
 
         <div class="space-y-3">
-          <p class="text-[11px] text-slate-500">Update your direct BankSathi/GroMo affiliate links. Customer submissions automatically use these links.</p>
+          <p class="text-[11px] text-slate-500">All live affiliate URLs mapped below. Edit and save anytime.</p>
 
           <div>
             <label class="block text-[11px] font-bold text-slate-700 mb-0.5">GroMo Free CIBIL Link</label>
@@ -311,18 +308,33 @@
           </div>
 
           <div>
-            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">MoneyView Affiliate Link</label>
-            <input type="url" id="link-moneyview" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
-          </div>
-
-          <div>
-            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">KreditBee Affiliate Link</label>
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">KreditBee Link (kh)</label>
             <input type="url" id="link-kreditbee" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
           </div>
 
           <div>
-            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">SmartCoin Affiliate Link</label>
-            <input type="url" id="link-smartcoin" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">ZapCash Link (xa)</label>
+            <input type="url" id="link-zapcash" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">Rimfincorp Personal Loan (ra)</label>
+            <input type="url" id="link-rimfincorp" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">True Balance Cash Loan (tz)</label>
+            <input type="url" id="link-truebalance" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">Lendingplate Loan (lp)</label>
+            <input type="url" id="link-lendingplate" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">Ring Instant Credit (rn)</label>
+            <input type="url" id="link-ring" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
           </div>
 
           <button onclick="saveAdminLinks()" class="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow transition">
@@ -335,36 +347,38 @@
   </div>
 
   <script>
-    // --- DEFAULT ACTIVE AFFILIATE DESTINATIONS ---
-    const DEFAULT_LINKS = {
+    // --- OFFICIAL VERIFIED GROMO DESTINATIONS ---
+    const OFFICIAL_LINKS = {
       cibil: 'https://sales.gromo.in/c/2_tnzOsEHy7BRbDkZqaMG',
-      moneyview: 'https://moneyview.in/personal-loan',
-      kreditbee: 'https://www.kreditbee.in',
-      smartcoin: 'https://smartcoin.co.in'
+      kreditbee: 'http://loan.gromo.in/kh/k83rU999fS',
+      zapcash: 'http://loan.gromo.in/xa/k83rU999fS',
+      rimfincorp: 'http://loan.gromo.in/ra/k83rU999fS',
+      truebalance: 'http://loan.gromo.in/tz/k83rU999fS',
+      lendingplate: 'http://loan.gromo.in/lp/k83rU999fS',
+      ring: 'http://loan.gromo.in/rn/k83rU999fS'
     };
 
-    // Auto-clean any stale demo mdeal URLs from storage
-    function cleanStoredLinks() {
+    function initLinks() {
       let saved = JSON.parse(localStorage.getItem('firstloan_partner_links') || '{}');
-      let cleaned = false;
-      for (const k in saved) {
-        if (!saved[k] || saved[k].includes('mdeal.in') || saved[k].includes('loan.gromo.in')) {
-          saved[k] = DEFAULT_LINKS[k] || '';
-          cleaned = true;
+      let updated = false;
+      for (const k in OFFICIAL_LINKS) {
+        if (!saved[k] || saved[k].includes('demo') || saved[k].includes('mdeal.in') || saved[k].includes('www.loan.gromo.in')) {
+          saved[k] = OFFICIAL_LINKS[k];
+          updated = true;
         }
       }
-      if (cleaned) {
+      if (updated) {
         localStorage.setItem('firstloan_partner_links', JSON.stringify(saved));
       }
     }
-    cleanStoredLinks();
+    initLinks();
 
     function getPartnerLink(key) {
       const saved = JSON.parse(localStorage.getItem('firstloan_partner_links') || '{}');
-      return saved[key] || DEFAULT_LINKS[key] || '#';
+      return saved[key] || OFFICIAL_LINKS[key] || '#';
     }
 
-    // --- LENDER DATA ---
+    // --- LENDER DIRECTORY WITH REAL BRAND NAMES ---
     const LENDERS = [
       {
         id: 'kreditbee',
@@ -377,24 +391,54 @@
         tenure: '3 to 24 Mos'
       },
       {
-        id: 'moneyview',
-        name: 'MoneyView Personal Loan',
-        tag: 'Low Interest Rate',
-        minIncome: 20000,
-        minScore: 680,
-        maxAmount: 1000000,
-        apr: '1.33% / mo',
-        tenure: '3 to 60 Mos'
+        id: 'zapcash',
+        name: 'ZapCash Quick Loan',
+        tag: 'Instant Approval',
+        minIncome: 12000,
+        minScore: 600,
+        maxAmount: 150000,
+        apr: '1.35% / mo',
+        tenure: '3 to 12 Mos'
       },
       {
-        id: 'smartcoin',
-        name: 'SmartCoin Instant Cash',
+        id: 'rimfincorp',
+        name: 'Rimfincorp Personal Loan',
+        tag: 'Flexible Tenure',
+        minIncome: 15000,
+        minScore: 630,
+        maxAmount: 500000,
+        apr: '1.29% / mo',
+        tenure: '6 to 48 Mos'
+      },
+      {
+        id: 'truebalance',
+        name: 'True Balance Cash Loan',
         tag: 'Low CIBIL Friendly',
+        minIncome: 10000,
+        minScore: 560,
+        maxAmount: 100000,
+        apr: '1.49% / mo',
+        tenure: '2 to 12 Mos'
+      },
+      {
+        id: 'lendingplate',
+        name: 'Lendingplate Personal Loan',
+        tag: 'Quick Bank Transfer',
+        minIncome: 18000,
+        minScore: 660,
+        maxAmount: 250000,
+        apr: '1.5% / mo',
+        tenure: '3 to 15 Mos'
+      },
+      {
+        id: 'ring',
+        name: 'Ring Instant Credit Line',
+        tag: 'Zero Paperwork',
         minIncome: 10000,
         minScore: 580,
         maxAmount: 100000,
-        apr: '1.5% / mo',
-        tenure: '2 to 12 Mos'
+        apr: '1.49% / mo',
+        tenure: '1 to 12 Mos'
       }
     ];
 
@@ -434,7 +478,7 @@
     }
     renderAllLoans();
 
-    // --- CIBIL FORM SUBMIT (Without Past Records / Existing EMI) ---
+    // --- CIBIL FORM SUBMIT ---
     function handleCibilSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('custName').value.trim();
@@ -442,20 +486,16 @@
       const pan = document.getElementById('custPan').value.trim().toUpperCase();
       const income = parseInt(document.getElementById('custIncome').value) || 25000;
 
-      // Save customer details in session for auto-filling loan modals
       sessionStorage.setItem('firstloan_user', JSON.stringify({ name, mobile, pan, income }));
 
-      // Soft score estimation based on PAN & Income
       let baseScore = 670;
       if (income >= 40000) baseScore += 80;
       else if (income >= 25000) baseScore += 50;
       else if (income >= 15000) baseScore += 20;
 
-      // Deterministic adjustment using PAN letters
       const panSum = pan.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
       const score = Math.min(840, Math.max(620, baseScore + (panSum % 35)));
 
-      // Display Results
       document.getElementById('cibil-form-card').classList.add('hidden');
       document.getElementById('cibil-result-container').classList.remove('hidden');
 
@@ -477,29 +517,28 @@
       renderCategorizedMatches(score, income);
     }
 
-    // --- RENDER HIGH / MEDIUM / LOW CHANCE MATCHES ---
+    // --- RENDER CHANCES ---
     function renderCategorizedMatches(score, income) {
       const list = document.getElementById('matched-lenders-list');
       
       const categorized = LENDERS.map(l => {
         let chance = 'High';
         let chanceClass = 'bg-emerald-50 text-emerald-700 border-emerald-200';
-        let reason = '100% Profile match';
+        let reason = 'Matched with your income profile';
 
         if (income < l.minIncome || score < (l.minScore - 30)) {
           chance = 'Low Risk';
           chanceClass = 'bg-rose-50 text-rose-700 border-rose-200';
-          reason = `Min ₹${l.minIncome.toLocaleString()} salary needed`;
+          reason = `Requires min ₹${l.minIncome.toLocaleString()} monthly salary`;
         } else if (score < l.minScore) {
           chance = 'Moderate';
           chanceClass = 'bg-amber-50 text-amber-700 border-amber-200';
-          reason = 'Manual bank statement verification';
+          reason = 'May require 3 months bank statement';
         }
 
         return { ...l, chance, chanceClass, reason };
       });
 
-      // Sort: High first, then Moderate, then Low
       const order = { 'High': 1, 'Moderate': 2, 'Low Risk': 3 };
       categorized.sort((a, b) => order[a.chance] - order[b.chance]);
 
@@ -517,7 +556,7 @@
             </div>
           </div>
           <button onclick="openApplyModal('${l.id}', '${l.name}', ${l.maxAmount})" class="w-full py-2 ${l.chance === 'Low Risk' ? 'bg-slate-700 hover:bg-slate-800' : 'bg-emerald-600 hover:bg-emerald-700'} text-white font-bold rounded-xl text-xs transition">
-            ${l.chance === 'Low Risk' ? 'Try Application Anyway' : 'Instant Apply ⚡'}
+            ${l.chance === 'Low Risk' ? 'Check Terms & Apply' : 'Instant Apply ⚡'}
           </button>
         </div>
       `).join('');
@@ -529,8 +568,8 @@
       window.open(url, '_blank');
     }
 
-    // --- MODAL APPLICATION LOGIC ---
-    let currentLenderId = 'moneyview';
+    // --- MODAL APPLY LOGIC ---
+    let currentLenderId = 'kreditbee';
     function openApplyModal(lenderId, name, maxAmount) {
       currentLenderId = lenderId;
       document.getElementById('modalLenderName').innerText = `Apply via ${name}`;
@@ -538,9 +577,8 @@
       
       const modalAmount = document.getElementById('modalAmount');
       modalAmount.max = maxAmount;
-      modalAmount.value = Math.min(100000, maxAmount);
+      modalAmount.value = Math.min(50000, maxAmount);
 
-      // Autofill from session if user previously filled CIBIL
       const sessionUser = JSON.parse(sessionStorage.getItem('firstloan_user') || '{}');
       if (sessionUser.name) document.getElementById('modalName').value = sessionUser.name;
       if (sessionUser.mobile) document.getElementById('modalMobile').value = sessionUser.mobile;
@@ -568,12 +606,12 @@
       setTimeout(() => {
         window.open(targetUrl, '_blank');
         closeApplyModal();
-        btn.innerText = 'Verify Eligibility & Continue ⚡';
+        btn.innerText = 'Continue to Lending Partner ⚡';
         btn.disabled = false;
-      }, 700);
+      }, 500);
     }
 
-    // --- EMI CALCULATOR LOGIC ---
+    // --- EMI CALCULATOR ---
     function calcEmi() {
       const P = parseFloat(document.getElementById('emi-amount').value);
       const rAnnual = parseFloat(document.getElementById('emi-rate').value);
@@ -600,9 +638,12 @@
 
     function openAdminModal() {
       document.getElementById('link-cibil').value = getPartnerLink('cibil');
-      document.getElementById('link-moneyview').value = getPartnerLink('moneyview');
       document.getElementById('link-kreditbee').value = getPartnerLink('kreditbee');
-      document.getElementById('link-smartcoin').value = getPartnerLink('smartcoin');
+      document.getElementById('link-zapcash').value = getPartnerLink('zapcash');
+      document.getElementById('link-rimfincorp').value = getPartnerLink('rimfincorp');
+      document.getElementById('link-truebalance').value = getPartnerLink('truebalance');
+      document.getElementById('link-lendingplate').value = getPartnerLink('lendingplate');
+      document.getElementById('link-ring').value = getPartnerLink('ring');
       document.getElementById('adminModal').classList.remove('hidden');
     }
 
@@ -612,13 +653,16 @@
 
     function saveAdminLinks() {
       const data = {
-        cibil: document.getElementById('link-cibil').value.trim() || DEFAULT_LINKS.cibil,
-        moneyview: document.getElementById('link-moneyview').value.trim() || DEFAULT_LINKS.moneyview,
-        kreditbee: document.getElementById('link-kreditbee').value.trim() || DEFAULT_LINKS.kreditbee,
-        smartcoin: document.getElementById('link-smartcoin').value.trim() || DEFAULT_LINKS.smartcoin,
+        cibil: document.getElementById('link-cibil').value.trim() || OFFICIAL_LINKS.cibil,
+        kreditbee: document.getElementById('link-kreditbee').value.trim() || OFFICIAL_LINKS.kreditbee,
+        zapcash: document.getElementById('link-zapcash').value.trim() || OFFICIAL_LINKS.zapcash,
+        rimfincorp: document.getElementById('link-rimfincorp').value.trim() || OFFICIAL_LINKS.rimfincorp,
+        truebalance: document.getElementById('link-truebalance').value.trim() || OFFICIAL_LINKS.truebalance,
+        lendingplate: document.getElementById('link-lendingplate').value.trim() || OFFICIAL_LINKS.lendingplate,
+        ring: document.getElementById('link-ring').value.trim() || OFFICIAL_LINKS.ring,
       };
       localStorage.setItem('firstloan_partner_links', JSON.stringify(data));
-      alert('Affiliate links saved successfully!');
+      alert('All GroMo partner links saved successfully!');
       closeAdminModal();
     }
 
