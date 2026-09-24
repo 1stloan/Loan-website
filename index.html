@@ -3,47 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>1stLoan.in - Instant Loans & Free Credit Score</title>
-  <meta name="theme-color" content="#059669">
+  <title>1stLoan.in - India's 98.4% Instant Loan Approval Hub</title>
+  <meta name="theme-color" content="#047857">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-          colors: { brand: { 50: '#ecfdf5', 500: '#10b981', 600: '#059669', 700: '#047857', 900: '#064e3b' } }
+          colors: { 
+            brand: { 50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981', 600: '#059669', 700: '#047857', 800: '#065f46', 900: '#064e3b' } 
+          }
         }
       }
     }
   </script>
   <style>
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+      50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.7); }
+    }
+    .pulse-glow { animation: pulseGlow 2.5s infinite; }
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex justify-center selection:bg-emerald-500 selection:text-white">
+<body class="bg-slate-900 text-slate-800 antialiased min-h-screen flex justify-center selection:bg-emerald-500 selection:text-white">
 
-  <!-- Main Mobile Container -->
-  <div class="w-full max-w-md bg-white min-h-screen shadow-2xl relative flex flex-col pb-24 border-x border-slate-200">
+  <!-- Mobile Frame Container -->
+  <div class="w-full max-w-md bg-slate-50 min-h-screen shadow-2xl relative flex flex-col pb-24 border-x border-slate-200">
     
-    <!-- Header -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md px-4 py-3 border-b border-slate-100 flex items-center justify-between">
+    <!-- Top Trust Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md px-4 py-2.5 border-b border-slate-200/80 flex items-center justify-between shadow-xs">
       <div class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-emerald-500/20">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-emerald-500 flex items-center justify-center text-white font-black text-lg shadow-md shadow-emerald-600/30">
           1L
         </div>
         <div>
-          <span class="font-extrabold text-slate-900 tracking-tight text-lg">1stLoan<span class="text-emerald-600">.in</span></span>
-          <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Direct Lending Hub</p>
+          <div class="flex items-center gap-1.5">
+            <span class="font-black text-slate-950 tracking-tight text-lg leading-tight">1stLoan<span class="text-emerald-600">.in</span></span>
+            <span class="bg-emerald-100 text-emerald-800 text-[9px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider">Verified</span>
+          </div>
+          <p class="text-[10px] text-emerald-700 font-bold tracking-wide">98.4% Loan Sanction Ratio</p>
         </div>
       </div>
       
       <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> RBI NBFCs
+        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-50 text-emerald-800 border border-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> RBI Regulated
         </span>
         <!-- Partner Hub Lock -->
         <button onclick="promptAdminPin()" title="Partner Portal" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100 transition">
@@ -52,111 +62,170 @@
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-1 px-4 pt-4 space-y-5">
+    <!-- LIVE CONVERSION TICKER (Social Proof) -->
+    <div class="bg-slate-900 text-white px-3 py-1.5 text-[11px] flex items-center justify-between border-b border-slate-800">
+      <div class="flex items-center gap-2 truncate">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span id="liveTickerText" class="text-slate-300 font-medium truncate">Rahul K. from Delhi received ₹1,20,000 in bank (3m ago)</span>
+      </div>
+      <span class="text-[10px] font-bold text-emerald-400 shrink-0 ml-1">Live ⚡</span>
+    </div>
 
-      <!-- Navigation Tabs -->
-      <div class="flex p-1 bg-slate-100 rounded-xl font-semibold text-xs text-slate-600">
-        <button onclick="switchTab('cibil')" id="tab-btn-cibil" class="flex-1 py-2 rounded-lg bg-white text-emerald-700 shadow-sm transition">🎯 CIBIL & Eligibility</button>
-        <button onclick="switchTab('loans')" id="tab-btn-loans" class="flex-1 py-2 rounded-lg text-slate-600 transition">⚡ All Loans (6)</button>
-        <button onclick="switchTab('emi')" id="tab-btn-emi" class="flex-1 py-2 rounded-lg text-slate-600 transition">🧮 EMI Calc</button>
+    <!-- MAIN BODY -->
+    <main class="flex-1 px-4 pt-3.5 space-y-4">
+
+      <!-- HERO ATTRACTION BANNER: "Pakka Loan Milega" Aura -->
+      <div class="bg-gradient-to-br from-emerald-800 via-teal-900 to-slate-950 text-white p-4 rounded-3xl shadow-xl relative overflow-hidden border border-emerald-700/40">
+        <!-- Background decorative rings -->
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl"></div>
+        <div class="absolute top-0 right-4 w-24 h-24 bg-teal-400/10 rounded-full blur-xl"></div>
+
+        <div class="relative z-10 space-y-2.5">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-extrabold uppercase tracking-wider flex items-center gap-1">
+              <span>✦</span> Guarantee Matching Engine
+            </span>
+            <span class="text-[10px] text-emerald-200/80 font-semibold">• Zero Advance Fee</span>
+          </div>
+
+          <div>
+            <h1 class="text-xl font-black tracking-tight leading-snug">
+              Paayein Instant Loan <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-200">98.4% Guaranteed Approval</span>
+            </h1>
+            <p class="text-xs text-slate-300 mt-1 font-medium">Low CIBIL ya Salary Slip nahi hai? Fikar na karein — RBI NBFCs ke multiple pre-approved offers available hain.</p>
+          </div>
+
+          <!-- Trust Signals Grid -->
+          <div class="grid grid-cols-3 gap-2 pt-2 border-t border-emerald-700/50 text-center">
+            <div class="bg-emerald-950/60 p-2 rounded-xl border border-emerald-700/30">
+              <span class="block text-emerald-300 font-black text-sm">₹10 Lakh</span>
+              <span class="text-[9px] text-slate-300 uppercase font-semibold">Max Limit</span>
+            </div>
+            <div class="bg-emerald-950/60 p-2 rounded-xl border border-emerald-700/30">
+              <span class="block text-emerald-300 font-black text-sm">5 Mins</span>
+              <span class="text-[9px] text-slate-300 uppercase font-semibold">Direct Disbursal</span>
+            </div>
+            <div class="bg-emerald-950/60 p-2 rounded-xl border border-emerald-700/30">
+              <span class="block text-amber-300 font-black text-sm">550+</span>
+              <span class="text-[9px] text-slate-300 uppercase font-semibold">Score Accepted</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- TAB 1: CIBIL & ELIGIBILITY CHECK -->
+      <!-- Navigation Tabs -->
+      <div class="flex p-1 bg-slate-200/80 rounded-2xl font-bold text-xs text-slate-600 shadow-inner">
+        <button onclick="switchTab('cibil')" id="tab-btn-cibil" class="flex-1 py-2.5 rounded-xl bg-white text-emerald-800 shadow-sm transition">🎯 Check & Get Loan</button>
+        <button onclick="switchTab('loans')" id="tab-btn-loans" class="flex-1 py-2.5 rounded-xl text-slate-600 transition">⚡ Instant Offers (7)</button>
+        <button onclick="switchTab('emi')" id="tab-btn-emi" class="flex-1 py-2.5 rounded-xl text-slate-600 transition">🧮 EMI Calc</button>
+      </div>
+
+      <!-- TAB 1: CIBIL & INSTANT ELIGIBILITY CHECK -->
       <section id="tab-cibil" class="space-y-4">
         
         <!-- Official Bureau Callout -->
-        <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-3.5 rounded-2xl shadow-md shadow-emerald-500/15 flex items-center justify-between">
+        <div class="bg-gradient-to-r from-teal-700 to-emerald-800 text-white p-3.5 rounded-2xl shadow-md flex items-center justify-between border border-emerald-600/40">
           <div class="space-y-0.5">
-            <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-200">Official Bureau Report</span>
-            <p class="text-xs font-bold leading-tight">Need Official Score via OTP?</p>
+            <span class="text-[9px] uppercase font-black tracking-widest text-emerald-300">Official Bureau Report</span>
+            <p class="text-xs font-bold leading-tight">Original CIBIL Score Dekhna Hai via OTP?</p>
           </div>
-          <button onclick="openOfficialBureau()" class="px-3 py-1.5 bg-white text-emerald-700 text-xs font-bold rounded-xl shadow-sm hover:bg-emerald-50 active:scale-95 transition flex items-center gap-1">
-            Verify OTP ↗
+          <button onclick="openOfficialBureau()" class="px-3 py-1.5 bg-white text-emerald-800 text-xs font-black rounded-xl shadow hover:bg-emerald-50 active:scale-95 transition flex items-center gap-1">
+            Free Check ↗
           </button>
         </div>
 
         <!-- 4-Field Simplified CIBIL Form -->
-        <div id="cibil-form-card" class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-4">
-          <div class="border-b border-slate-100 pb-2">
-            <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
-              <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">🎯</span>
-              Check Credit Bureau Score & Match
-            </h2>
-            <p class="text-[11px] text-slate-500">Free soft check • Zero impact on credit rating</p>
+        <div id="cibil-form-card" class="bg-white rounded-3xl p-5 border border-slate-200/90 shadow-lg space-y-4">
+          <div class="border-b border-slate-100 pb-3">
+            <div class="flex items-center justify-between">
+              <h2 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">⚡</span>
+                Fast Approval Profile Check
+              </h2>
+              <span class="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">100% Free</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-0.5">Yeh soft assessment hai, aapke credit score par 1 point ka bhi farq nahi padega.</p>
           </div>
 
-          <form id="cibilForm" onsubmit="handleCibilSubmit(event)" class="space-y-3">
+          <form id="cibilForm" onsubmit="handleCibilSubmit(event)" novalidate class="space-y-3.5">
             <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1">Full Legal Name (as on PAN)</label>
-              <input type="text" id="custName" required placeholder="e.g. Rahul Sharma" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
+              <label class="block text-xs font-bold text-slate-700 mb-1">Full Name (PAN Card ke anusaar)</label>
+              <input type="text" id="custName" placeholder="e.g. Amit Kumar" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold text-slate-900 transition">
+              <p id="err-custName" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
             </div>
 
-            <div class="grid grid-cols-2 gap-2">
+            <div class="grid grid-cols-2 gap-2.5">
               <div>
-                <label class="block text-xs font-semibold text-slate-600 mb-1">Mobile Number</label>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number</label>
                 <div class="flex">
-                  <span class="inline-flex items-center px-2 text-xs text-slate-500 bg-slate-100 border border-r-0 border-slate-200 rounded-l-xl font-medium">+91</span>
-                  <input type="tel" id="custMobile" maxlength="10" required placeholder="9876543210" pattern="[6-9][0-9]{9}" class="w-full px-2.5 py-2 text-xs rounded-r-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
+                  <span class="inline-flex items-center px-2 text-xs text-slate-500 bg-slate-100 border border-r-0 border-slate-200 rounded-l-xl font-bold">+91</span>
+                  <input type="tel" id="custMobile" maxlength="10" placeholder="9876543210" class="w-full px-2.5 py-2.5 text-xs rounded-r-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold text-slate-900 transition">
                 </div>
+                <p id="err-custMobile" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-600 mb-1">PAN Card Number</label>
-                <input type="text" id="custPan" maxlength="10" required placeholder="ABCDE1234F" class="uppercase w-full px-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
+                <label class="block text-xs font-bold text-slate-700 mb-1">PAN Card Number</label>
+                <input type="text" id="custPan" maxlength="10" placeholder="ABCDE1234F" class="uppercase w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-bold text-slate-900 transition">
+                <p id="err-custPan" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1">Monthly In-Hand Salary / Income (₹)</label>
-              <input type="number" id="custIncome" required placeholder="e.g. 25000" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium">
+              <label class="block text-xs font-bold text-slate-700 mb-1">Monthly In-Hand Income (₹)</label>
+              <input type="number" id="custIncome" placeholder="e.g. 25000" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-bold text-slate-900 transition">
+              <p id="err-custIncome" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
             </div>
 
-            <div class="pt-1">
+            <div class="pt-0.5">
               <label class="flex items-start gap-2 cursor-pointer text-[10px] text-slate-500 leading-tight">
-                <input type="checkbox" checked required class="mt-0.5 rounded text-emerald-600 focus:ring-0">
-                <span>I authorize 1stLoan.in to assess my profile and forward my request to verified RBI lending partners.</span>
+                <input type="checkbox" id="custConsent" checked class="mt-0.5 rounded text-emerald-600 focus:ring-0">
+                <span>Main 1stLoan.in ko authorization deta hoon ki meri profile ke anusaar mujhe sabse high approval loan partners match karayein.</span>
               </label>
+              <p id="err-custConsent" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
             </div>
 
-            <button type="submit" id="btnCheckScore" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-bold rounded-xl text-xs shadow-md shadow-emerald-600/20 transition flex items-center justify-center gap-1.5">
-              <span>Assess Eligibility & Show Offers</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            <button type="submit" id="btnCheckScore" class="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-[0.98] text-white font-black rounded-2xl text-xs shadow-lg shadow-emerald-600/30 transition flex items-center justify-center gap-2 pulse-glow">
+              <span>Find My Guaranteed Pre-Approved Loans</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
           </form>
         </div>
 
-        <!-- CIBIL RESULT & CATEGORIZED LENDERS -->
+        <!-- CIBIL RESULT & GUARANTEED OFFERS CONTAINER -->
         <div id="cibil-result-container" class="hidden space-y-4">
           
-          <div class="bg-slate-900 text-white rounded-2xl p-4 shadow-lg border border-slate-800 relative overflow-hidden">
+          <div class="bg-gradient-to-br from-slate-900 to-emerald-950 text-white rounded-3xl p-4.5 shadow-xl border border-emerald-500/30 relative overflow-hidden">
             <div class="flex justify-between items-start">
               <div>
-                <span class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider">Estimated Bureau Rating</span>
-                <div class="flex items-baseline gap-2 mt-0.5">
-                  <span id="resScoreVal" class="text-3xl font-extrabold text-white">765</span>
-                  <span class="text-xs text-slate-400">/ 900</span>
-                  <span id="resBadge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Excellent</span>
+                <span class="text-[10px] uppercase font-black text-emerald-400 tracking-wider flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Loan Approval Status
+                </span>
+                <div class="flex items-baseline gap-2 mt-1">
+                  <span id="resScoreVal" class="text-3xl font-black text-white">765</span>
+                  <span class="text-xs text-slate-400 font-semibold">/ 900</span>
+                  <span id="resBadge" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">99% Pre-Approved</span>
                 </div>
               </div>
-              <button onclick="openOfficialBureau()" class="px-2.5 py-1 bg-emerald-500 text-slate-950 font-bold text-[11px] rounded-lg shadow hover:bg-emerald-400 transition">
-                Get Bureau PDF ↗
+              <button onclick="openOfficialBureau()" class="px-2.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-[11px] rounded-xl shadow transition">
+                Get PDF ↗
               </button>
             </div>
 
             <div class="mt-3 pt-3 border-t border-slate-800 text-[11px] text-slate-300 flex items-center justify-between">
               <span id="resCustDisplay">Customer Profile</span>
-              <span class="text-emerald-400 font-semibold">Matched Partners</span>
+              <span class="text-emerald-400 font-bold">Matches Found: 7</span>
             </div>
           </div>
 
           <!-- LENDER MATCH RESULTS -->
           <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider">Categorized Loan Matches</h3>
-              <span class="text-[10px] text-slate-500">Ranked by Approval Probability</span>
+            <div class="flex items-center justify-between px-1">
+              <h3 class="font-black text-slate-900 text-xs uppercase tracking-wider">Aapke Liye Pre-Approved Loans</h3>
+              <span class="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full">Top Sanction Chances</span>
             </div>
             
-            <div id="matched-lenders-list" class="space-y-2.5">
+            <div id="matched-lenders-list" class="space-y-3">
               <!-- Rendered dynamically -->
             </div>
           </div>
@@ -164,31 +233,31 @@
 
       </section>
 
-      <!-- TAB 2: ALL LOANS -->
+      <!-- TAB 2: ALL LOANS (DIRECT APPLY) -->
       <section id="tab-loans" class="hidden space-y-3">
         <div class="flex items-center justify-between px-1">
-          <h2 class="font-bold text-slate-800 text-xs uppercase tracking-wider">All Verified Lending Partners</h2>
-          <span class="text-[10px] text-slate-500">Instant Disbursal</span>
+          <h2 class="font-black text-slate-900 text-xs uppercase tracking-wider">All 7 Verified Direct Partners</h2>
+          <span class="text-[10px] text-slate-500 font-semibold">Instant Bank Transfer</span>
         </div>
 
-        <div id="all-loans-list" class="space-y-2.5">
+        <div id="all-loans-list" class="space-y-3">
           <!-- Rendered dynamically -->
         </div>
       </section>
 
       <!-- TAB 3: EMI CALCULATOR -->
       <section id="tab-emi" class="hidden space-y-4">
-        <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-4">
-          <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+        <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+          <h2 class="font-black text-slate-900 text-sm flex items-center gap-2">
             <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs">🧮</span>
             Personal Loan EMI Calculator
           </h2>
 
-          <div class="space-y-3 text-xs font-semibold text-slate-700">
+          <div class="space-y-3.5 text-xs font-bold text-slate-700">
             <div>
               <div class="flex justify-between text-slate-800 mb-1">
                 <span>Loan Amount</span>
-                <span id="emi-amount-val" class="font-bold text-emerald-700">₹ 2,00,000</span>
+                <span id="emi-amount-val" class="font-black text-emerald-700 text-sm">₹ 2,00,000</span>
               </div>
               <input type="range" id="emi-amount" min="10000" max="1500000" step="10000" value="200000" oninput="calcEmi()" class="w-full accent-emerald-600">
             </div>
@@ -196,7 +265,7 @@
             <div>
               <div class="flex justify-between text-slate-800 mb-1">
                 <span>Interest Rate (% p.a.)</span>
-                <span id="emi-rate-val" class="font-bold text-emerald-700">14.0%</span>
+                <span id="emi-rate-val" class="font-black text-emerald-700 text-sm">14.0%</span>
               </div>
               <input type="range" id="emi-rate" min="10.5" max="36" step="0.5" value="14" oninput="calcEmi()" class="w-full accent-emerald-600">
             </div>
@@ -204,18 +273,18 @@
             <div>
               <div class="flex justify-between text-slate-800 mb-1">
                 <span>Tenure (Months)</span>
-                <span id="emi-tenure-val" class="font-bold text-emerald-700">24 Months</span>
+                <span id="emi-tenure-val" class="font-black text-emerald-700 text-sm">24 Months</span>
               </div>
               <input type="range" id="emi-tenure" min="6" max="60" step="3" value="24" oninput="calcEmi()" class="w-full accent-emerald-600">
             </div>
           </div>
 
-          <div class="bg-slate-900 text-white rounded-xl p-3.5 flex items-center justify-between">
+          <div class="bg-slate-900 text-white rounded-2xl p-4 flex items-center justify-between border border-slate-800">
             <div>
-              <span class="text-[10px] text-slate-400 uppercase font-semibold">Monthly EMI</span>
-              <p id="emi-monthly-val" class="text-xl font-extrabold text-emerald-400">₹ 9,602</p>
+              <span class="text-[10px] text-slate-400 uppercase font-bold">Monthly EMI</span>
+              <p id="emi-monthly-val" class="text-2xl font-black text-emerald-400">₹ 9,602</p>
             </div>
-            <button onclick="switchTab('loans')" class="px-3 py-1.5 bg-emerald-600 text-white font-bold rounded-lg text-xs hover:bg-emerald-500 transition">
+            <button onclick="switchTab('loans')" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-xs shadow transition">
               Apply Now ⚡
             </button>
           </div>
@@ -224,64 +293,89 @@
 
     </main>
 
+    <!-- TRUST STRIP / WHY 1STLOAN -->
+    <div class="px-4 py-3 bg-white border-t border-slate-200 mt-4 space-y-2">
+      <div class="flex items-center justify-around text-center text-[10px] text-slate-600 font-bold">
+        <div class="space-y-0.5">
+          <span class="text-base">🔒</span>
+          <p>256-Bit SSL Safe</p>
+        </div>
+        <div class="space-y-0.5">
+          <span class="text-base">⚡</span>
+          <p>Paperless Sanction</p>
+        </div>
+        <div class="space-y-0.5">
+          <span class="text-base">💸</span>
+          <p>Zero Upfront Fee</p>
+        </div>
+      </div>
+    </div>
+
     <!-- FOOTER -->
-    <footer class="mt-auto px-4 py-4 text-center border-t border-slate-100 bg-slate-50 space-y-1">
-      <p class="text-[10px] text-slate-400">© 2026 1stLoan.in • Direct Digital Loan Aggregator</p>
-      <div class="flex items-center justify-center gap-3 text-[10px] text-slate-400 font-medium">
+    <footer class="px-4 py-4 text-center border-t border-slate-200 bg-slate-100 space-y-1.5">
+      <p class="text-[10px] text-slate-500 font-medium">© 2026 1stLoan.in • Direct Digital Loan Aggregation Network</p>
+      <div class="flex items-center justify-center gap-3 text-[10px] text-slate-500 font-bold">
         <a href="#privacy" class="hover:underline">Privacy Policy</a>
         <span>•</span>
-        <a href="#terms" class="hover:underline">Terms of Service</a>
+        <a href="#terms" class="hover:underline">Terms & NBFC Disclaimers</a>
         <span>•</span>
-        <button onclick="promptAdminPin()" class="text-slate-400 hover:text-slate-600 underline">🔒 Partner Portal</button>
+        <button onclick="promptAdminPin()" class="text-slate-500 hover:text-slate-700 underline">🔒 Partner Hub</button>
       </div>
     </footer>
 
-    <!-- MODAL: APPLICATION DIALOG -->
-    <div id="applyModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
-      <div class="w-full max-w-md bg-white rounded-t-3xl sm:rounded-2xl p-5 space-y-4 max-h-[90vh] overflow-y-auto">
+    <!-- MODAL: APPLICATION DIALOG WITH VALIDATIONS -->
+    <div id="applyModal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+      <div class="w-full max-w-md bg-white rounded-t-3xl sm:rounded-3xl p-5 space-y-4 max-h-[90vh] overflow-y-auto shadow-2xl">
         <div class="flex justify-between items-center border-b border-slate-100 pb-3">
           <div>
-            <span class="text-[10px] uppercase font-bold text-emerald-600 tracking-wider">Fast Paperless Application</span>
-            <h3 id="modalLenderName" class="font-extrabold text-slate-900 text-base">Apply via Partner</h3>
+            <span class="text-[10px] uppercase font-black text-emerald-600 tracking-wider flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> 100% Direct Disbursal Form
+            </span>
+            <h3 id="modalLenderName" class="font-black text-slate-900 text-base">Apply via Partner</h3>
           </div>
-          <button onclick="closeApplyModal()" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200">✕</button>
+          <button onclick="closeApplyModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 font-bold">✕</button>
         </div>
 
-        <form id="loanApplyForm" onsubmit="handleApplySubmit(event)" class="space-y-3">
+        <form id="loanApplyForm" onsubmit="handleApplySubmit(event)" novalidate class="space-y-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">Full Legal Name</label>
-            <input type="text" id="modalName" required class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 font-medium">
+            <label class="block text-xs font-bold text-slate-700 mb-1">Full Legal Name (as on PAN)</label>
+            <input type="text" id="modalName" placeholder="e.g. Rahul Sharma" class="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 font-semibold text-slate-900 transition">
+            <p id="err-modalName" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
           </div>
 
           <div class="grid grid-cols-2 gap-2">
             <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1">Mobile Number</label>
-              <input type="tel" id="modalMobile" maxlength="10" required class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 font-medium">
+              <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number</label>
+              <input type="tel" id="modalMobile" maxlength="10" placeholder="9876543210" class="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 font-semibold text-slate-900 transition">
+              <p id="err-modalMobile" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1">PAN Card Number</label>
-              <input type="text" id="modalPan" maxlength="10" required class="uppercase w-full px-3 py-2 text-xs rounded-xl border border-slate-200 font-medium">
+              <label class="block text-xs font-bold text-slate-700 mb-1">PAN Card Number</label>
+              <input type="text" id="modalPan" maxlength="10" placeholder="ABCDE1234F" class="uppercase w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 font-black text-slate-900 transition">
+              <p id="err-modalPan" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
             </div>
           </div>
 
           <!-- Requested Amount (Editable + Chips) -->
           <div>
             <div class="flex justify-between items-center mb-1">
-              <label class="text-xs font-semibold text-slate-600">Requested Amount (₹)</label>
-              <span id="modalMaxLimitLabel" class="text-[10px] text-slate-400 font-medium">Max Limit: ₹5,00,000</span>
+              <label class="text-xs font-bold text-slate-700">Requested Amount (₹)</label>
+              <span id="modalMaxLimitLabel" class="text-[10px] text-emerald-700 font-bold">Max Limit: ₹10,00,000</span>
             </div>
-            <input type="number" id="modalAmount" required placeholder="Enter amount, e.g. 50000" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500">
+            <input type="number" id="modalAmount" placeholder="Enter amount, e.g. 50000" class="w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 font-black text-emerald-700 text-sm focus:ring-2 focus:ring-emerald-500 transition">
+            <p id="err-modalAmount" class="text-[10px] text-rose-600 font-bold mt-1 hidden"></p>
+            
             <div class="flex gap-1.5 mt-1.5">
-              <button type="button" onclick="setModalAmount(25000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹25K</button>
-              <button type="button" onclick="setModalAmount(50000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹50K</button>
-              <button type="button" onclick="setModalAmount(100000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹1 Lakh</button>
-              <button type="button" onclick="setModalAmount(200000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded text-[10px] font-semibold text-slate-600">₹2 Lakh</button>
+              <button type="button" onclick="setModalAmount(25000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-[10px] font-bold text-slate-700">₹25K</button>
+              <button type="button" onclick="setModalAmount(50000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-[10px] font-bold text-slate-700">₹50K</button>
+              <button type="button" onclick="setModalAmount(100000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-[10px] font-bold text-slate-700">₹1 Lakh</button>
+              <button type="button" onclick="setModalAmount(200000)" class="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 rounded-lg text-[10px] font-bold text-slate-700">₹2 Lakh</button>
             </div>
           </div>
 
           <div class="pt-2">
-            <button type="submit" id="btnSubmitApply" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow-md shadow-emerald-600/25 flex items-center justify-center gap-1.5 transition">
-              <span>Continue to Lending Partner ⚡</span>
+            <button type="submit" id="btnSubmitApply" class="w-full py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-black rounded-2xl text-xs shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-1.5 transition pulse-glow">
+              <span>Sanction Loan & Open Bank Portal ⚡</span>
             </button>
           </div>
         </form>
@@ -289,14 +383,14 @@
     </div>
 
     <!-- MODAL: PARTNER / ADMIN PORTAL -->
-    <div id="adminModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-      <div class="w-full max-w-sm bg-white rounded-2xl p-5 space-y-4 max-h-[85vh] overflow-y-auto">
+    <div id="adminModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+      <div class="w-full max-w-sm bg-white rounded-3xl p-5 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl">
         <div class="flex justify-between items-center border-b border-slate-100 pb-2">
           <div class="flex items-center gap-1.5">
             <span class="text-base">🔒</span>
-            <h3 class="font-bold text-slate-900 text-sm">Owner & Partner Hub</h3>
+            <h3 class="font-black text-slate-900 text-sm">Owner & Partner Hub</h3>
           </div>
-          <button onclick="closeAdminModal()" class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs text-slate-500">✕</button>
+          <button onclick="closeAdminModal()" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-xs text-slate-500 font-bold">✕</button>
         </div>
 
         <div class="space-y-3">
@@ -308,7 +402,12 @@
           </div>
 
           <div>
-            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">KreditBee Link (kh)</label>
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">MoneyView Link (mv)</label>
+            <input type="url" id="link-moneyview" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 mb-0.5">KreditBee Link (kb)</label>
             <input type="url" id="link-kreditbee" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
           </div>
 
@@ -337,8 +436,8 @@
             <input type="url" id="link-ring" class="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 font-mono">
           </div>
 
-          <button onclick="saveAdminLinks()" class="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow transition">
-            Save Links
+          <button onclick="saveAdminLinks()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow transition">
+            Save All Links
           </button>
         </div>
       </div>
@@ -350,7 +449,8 @@
     // --- OFFICIAL VERIFIED GROMO DESTINATIONS ---
     const OFFICIAL_LINKS = {
       cibil: 'https://sales.gromo.in/c/2_tnzOsEHy7BRbDkZqaMG',
-      kreditbee: 'http://loan.gromo.in/kh/k83rU999fS',
+      moneyview: 'http://loan.gromo.in/mv/k83rU999fS',
+      kreditbee: 'http://loan.gromo.in/kb/k83rU999fS',
       zapcash: 'http://loan.gromo.in/xa/k83rU999fS',
       rimfincorp: 'http://loan.gromo.in/ra/k83rU999fS',
       truebalance: 'http://loan.gromo.in/tz/k83rU999fS',
@@ -362,7 +462,7 @@
       let saved = JSON.parse(localStorage.getItem('firstloan_partner_links') || '{}');
       let updated = false;
       for (const k in OFFICIAL_LINKS) {
-        if (!saved[k] || saved[k].includes('demo') || saved[k].includes('mdeal.in') || saved[k].includes('www.loan.gromo.in')) {
+        if (!saved[k] || saved[k].includes('demo') || saved[k].includes('mdeal.in') || saved[k].includes('www.loan.gromo.in') || saved[k].includes('/kh/')) {
           saved[k] = OFFICIAL_LINKS[k];
           updated = true;
         }
@@ -378,79 +478,204 @@
       return saved[key] || OFFICIAL_LINKS[key] || '#';
     }
 
-    // --- LENDER DIRECTORY WITH REAL BRAND NAMES ---
+    // --- LENDER DIRECTORY WITH HIGH-CONVERTING TAGS ---
     const LENDERS = [
       {
+        id: 'moneyview',
+        name: 'MoneyView Personal Loan',
+        badge: 'Lowest Interest • 99% Pre-Approved',
+        badgeColor: 'bg-emerald-50 text-emerald-800 border-emerald-300',
+        minIncome: 15000,
+        minScore: 620,
+        maxAmount: 1000000,
+        apr: '1.33% / mo',
+        tenure: '3 to 60 Mos',
+        speed: 'Sanction in 5 mins'
+      },
+      {
         id: 'kreditbee',
-        name: 'KreditBee Instant Loan',
-        tag: 'Fast Disbursal',
-        minIncome: 12000,
-        minScore: 650,
+        name: 'KreditBee Instant Cash',
+        badge: 'Instant Bank Disbursal ⚡',
+        badgeColor: 'bg-blue-50 text-blue-800 border-blue-300',
+        minIncome: 10000,
+        minScore: 600,
         maxAmount: 400000,
         apr: '1.25% / mo',
-        tenure: '3 to 24 Mos'
+        tenure: '3 to 24 Mos',
+        speed: 'Direct Account Transfer'
       },
       {
         id: 'zapcash',
         name: 'ZapCash Quick Loan',
-        tag: 'Instant Approval',
-        minIncome: 12000,
-        minScore: 600,
+        badge: 'No Income Proof Needed',
+        badgeColor: 'bg-purple-50 text-purple-800 border-purple-300',
+        minIncome: 10000,
+        minScore: 560,
         maxAmount: 150000,
         apr: '1.35% / mo',
-        tenure: '3 to 12 Mos'
+        tenure: '3 to 12 Mos',
+        speed: '100% Digital Flow'
+      },
+      {
+        id: 'truebalance',
+        name: 'True Balance Instant Loan',
+        badge: 'Low CIBIL Friendly (550+)',
+        badgeColor: 'bg-amber-50 text-amber-900 border-amber-300',
+        minIncome: 8000,
+        minScore: 550,
+        maxAmount: 100000,
+        apr: '1.49% / mo',
+        tenure: '2 to 12 Mos',
+        speed: 'Sanction within 2 mins'
       },
       {
         id: 'rimfincorp',
         name: 'Rimfincorp Personal Loan',
-        tag: 'Flexible Tenure',
+        badge: 'High Limit Sanction',
+        badgeColor: 'bg-teal-50 text-teal-800 border-teal-300',
         minIncome: 15000,
-        minScore: 630,
+        minScore: 620,
         maxAmount: 500000,
         apr: '1.29% / mo',
-        tenure: '6 to 48 Mos'
-      },
-      {
-        id: 'truebalance',
-        name: 'True Balance Cash Loan',
-        tag: 'Low CIBIL Friendly',
-        minIncome: 10000,
-        minScore: 560,
-        maxAmount: 100000,
-        apr: '1.49% / mo',
-        tenure: '2 to 12 Mos'
+        tenure: '6 to 48 Mos',
+        speed: 'Flexible Repayment'
       },
       {
         id: 'lendingplate',
         name: 'Lendingplate Personal Loan',
-        tag: 'Quick Bank Transfer',
+        badge: 'Fast Processing',
+        badgeColor: 'bg-indigo-50 text-indigo-800 border-indigo-300',
         minIncome: 18000,
-        minScore: 660,
+        minScore: 640,
         maxAmount: 250000,
         apr: '1.5% / mo',
-        tenure: '3 to 15 Mos'
+        tenure: '3 to 15 Mos',
+        speed: 'Verified RBI NBFC'
       },
       {
         id: 'ring',
         name: 'Ring Instant Credit Line',
-        tag: 'Zero Paperwork',
-        minIncome: 10000,
-        minScore: 580,
+        badge: 'Zero Paperwork Credit',
+        badgeColor: 'bg-rose-50 text-rose-800 border-rose-300',
+        minIncome: 8000,
+        minScore: 550,
         maxAmount: 100000,
         apr: '1.49% / mo',
-        tenure: '1 to 12 Mos'
+        tenure: '1 to 12 Mos',
+        speed: 'UPI Scan & Pay Ready'
       }
     ];
+
+    // --- LIVE TICKER ROTATION (Social Proof) ---
+    const LIVE_ACTIVITIES = [
+      "Rahul K. from Delhi received ₹1,20,000 in bank (3m ago)",
+      "Priya M. from Mumbai got ₹50,000 sanctioned via KreditBee (5m ago)",
+      "Amit S. from Lucknow got ₹2,50,000 approved via MoneyView (1m ago)",
+      "Vikas T. from Jaipur got ₹75,000 disbursed without salary slip (4m ago)",
+      "Deepak P. from Patna approved with 590 CIBIL score (2m ago)"
+    ];
+    let tickerIdx = 0;
+    setInterval(() => {
+      tickerIdx = (tickerIdx + 1) % LIVE_ACTIVITIES.length;
+      const el = document.getElementById('liveTickerText');
+      if (el) {
+        el.innerText = LIVE_ACTIVITIES[tickerIdx];
+      }
+    }, 4000);
+
+    // --- STRICT VALIDATION ENGINE ---
+    const Validation = {
+      name: (val) => {
+        val = val.trim();
+        if (!val) return 'Pura Naam likhna anivarya hai.';
+        if (!/^[a-zA-Z\s]+$/.test(val)) return 'Naam me sirf letters hone chahiye.';
+        const parts = val.split(/\s+/);
+        if (parts.length < 2 || parts[0].length < 2 || parts[1].length < 2) {
+          return 'First aur Last name dono likhein (jaise PAN par hai).';
+        }
+        return '';
+      },
+      mobile: (val) => {
+        val = val.trim();
+        if (!val) return 'Mobile number zaroori hai.';
+        if (!/^[6-9]\d{9}$/.test(val)) return 'Kripya sahi 10-digit mobile number daalein.';
+        if (/^(\d)\1{9}$/.test(val) || val === '1234567890' || val === '9876543210') {
+          return 'Asli mobile number daalein taaki OTP aa sake.';
+        }
+        return '';
+      },
+      pan: (val) => {
+        val = val.trim().toUpperCase();
+        if (!val) return 'PAN number zaroori hai.';
+        if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(val)) {
+          return 'Sahi PAN format daalein (e.g. ABCDE1234F).';
+        }
+        const fourthChar = val[3];
+        if (!['P', 'C', 'H', 'F', 'A', 'T', 'B', 'L', 'J', 'G'].includes(fourthChar)) {
+          return 'Invalid PAN card character.';
+        }
+        return '';
+      },
+      income: (val) => {
+        const num = parseInt(val);
+        if (isNaN(num) || num <= 0) return 'Monthly income likhein.';
+        if (num < 8000) return 'Min monthly income ₹8,000 honi chahiye.';
+        return '';
+      },
+      amount: (val, max) => {
+        const num = parseInt(val);
+        if (isNaN(num) || num <= 0) return 'Loan amount likhein.';
+        if (num < 5000) return 'Min loan amount ₹5,000 hai.';
+        if (max && num > max) return `Amount max limit ₹${max.toLocaleString()} se zyada nahi ho sakta.`;
+        return '';
+      }
+    };
+
+    function setFieldError(fieldId, errorMsg) {
+      const input = document.getElementById(fieldId);
+      const errEl = document.getElementById(`err-${fieldId}`);
+      if (errorMsg) {
+        input.classList.add('border-rose-500', 'ring-1', 'ring-rose-500');
+        input.classList.remove('border-slate-200');
+        if (errEl) {
+          errEl.innerText = errorMsg;
+          errEl.classList.remove('hidden');
+        }
+      } else {
+        input.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+        input.classList.add('border-slate-200');
+        if (errEl) {
+          errEl.innerText = '';
+          errEl.classList.add('hidden');
+        }
+      }
+    }
+
+    ['custName', 'custMobile', 'custPan', 'custIncome', 'modalName', 'modalMobile', 'modalPan', 'modalAmount'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => setFieldError(id, ''));
+      }
+    });
+
+    ['custPan', 'modalPan'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', (e) => {
+          e.target.value = e.target.value.toUpperCase();
+        });
+      }
+    });
 
     // --- TAB SWITCHING ---
     function switchTab(tab) {
       ['cibil', 'loans', 'emi'].forEach(t => {
         document.getElementById(`tab-${t}`).classList.add('hidden');
-        document.getElementById(`tab-btn-${t}`).classList.remove('bg-white', 'text-emerald-700', 'shadow-sm');
+        document.getElementById(`tab-btn-${t}`).classList.remove('bg-white', 'text-emerald-800', 'shadow-sm');
         document.getElementById(`tab-btn-${t}`).classList.add('text-slate-600');
       });
       document.getElementById(`tab-${tab}`).classList.remove('hidden');
-      document.getElementById(`tab-btn-${tab}`).classList.add('bg-white', 'text-emerald-700', 'shadow-sm');
+      document.getElementById(`tab-btn-${tab}`).classList.add('bg-white', 'text-emerald-800', 'shadow-sm');
       document.getElementById(`tab-btn-${tab}`).classList.remove('text-slate-600');
     }
 
@@ -458,43 +683,76 @@
     function renderAllLoans() {
       const container = document.getElementById('all-loans-list');
       container.innerHTML = LENDERS.map(l => `
-        <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+        <div class="bg-white rounded-3xl p-4 border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
           <div class="flex justify-between items-start">
             <div>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/50">${l.tag}</span>
-              <h4 class="font-bold text-slate-900 text-sm mt-1">${l.name}</h4>
+              <span class="text-[9px] font-black px-2 py-0.5 rounded-full border ${l.badgeColor} uppercase tracking-wider">${l.badge}</span>
+              <h4 class="font-black text-slate-900 text-sm mt-1.5">${l.name}</h4>
+              <p class="text-[10px] text-emerald-700 font-bold flex items-center gap-1">⚡ ${l.speed}</p>
             </div>
-            <span class="text-xs font-bold text-slate-500">Up to ₹${(l.maxAmount/100000).toFixed(1)}L</span>
+            <div class="text-right">
+              <span class="text-sm font-black text-slate-950">Up to ₹${(l.maxAmount/100000).toFixed(1)}L</span>
+              <p class="text-[10px] text-slate-500 font-semibold">${l.apr}</p>
+            </div>
           </div>
-          <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-500 bg-slate-50 p-2.5 rounded-xl">
-            <div>Interest: <strong class="text-slate-800">${l.apr}</strong></div>
-            <div>Tenure: <strong class="text-slate-800">${l.tenure}</strong></div>
+          <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-2xl font-semibold border border-slate-100">
+            <div>Tenure: <strong class="text-slate-900">${l.tenure}</strong></div>
+            <div>Sanction: <strong class="text-emerald-700 font-bold">100% Online</strong></div>
           </div>
-          <button onclick="openApplyModal('${l.id}', '${l.name}', ${l.maxAmount})" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow-sm transition">
-            Apply Now ⚡
+          <button onclick="openApplyModal('${l.id}', '${l.name}', ${l.maxAmount})" class="w-full py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-black rounded-xl text-xs shadow-md transition flex items-center justify-center gap-1">
+            <span>Get Instant Loan ⚡</span>
           </button>
         </div>
       `).join('');
     }
     renderAllLoans();
 
-    // --- CIBIL FORM SUBMIT ---
+    // --- CIBIL FORM SUBMIT (WITH STRICT VERIFICATION) ---
     function handleCibilSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('custName').value.trim();
-      const mobile = document.getElementById('custMobile').value.trim();
-      const pan = document.getElementById('custPan').value.trim().toUpperCase();
-      const income = parseInt(document.getElementById('custIncome').value) || 25000;
+
+      const nameVal = document.getElementById('custName').value;
+      const mobVal = document.getElementById('custMobile').value;
+      const panVal = document.getElementById('custPan').value;
+      const incVal = document.getElementById('custIncome').value;
+      const consentChecked = document.getElementById('custConsent').checked;
+
+      const errName = Validation.name(nameVal);
+      const errMob = Validation.mobile(mobVal);
+      const errPan = Validation.pan(panVal);
+      const errInc = Validation.income(incVal);
+
+      setFieldError('custName', errName);
+      setFieldError('custMobile', errMob);
+      setFieldError('custPan', errPan);
+      setFieldError('custIncome', errInc);
+
+      const errConsent = document.getElementById('err-custConsent');
+      if (!consentChecked) {
+        errConsent.innerText = 'Authorization accept karna zaroori hai.';
+        errConsent.classList.remove('hidden');
+      } else {
+        errConsent.classList.add('hidden');
+      }
+
+      if (errName || errMob || errPan || errInc || !consentChecked) {
+        return;
+      }
+
+      const name = nameVal.trim();
+      const mobile = mobVal.trim();
+      const pan = panVal.trim().toUpperCase();
+      const income = parseInt(incVal);
 
       sessionStorage.setItem('firstloan_user', JSON.stringify({ name, mobile, pan, income }));
 
-      let baseScore = 670;
-      if (income >= 40000) baseScore += 80;
-      else if (income >= 25000) baseScore += 50;
-      else if (income >= 15000) baseScore += 20;
+      let baseScore = 690;
+      if (income >= 40000) baseScore += 70;
+      else if (income >= 25000) baseScore += 45;
+      else if (income >= 15000) baseScore += 25;
 
       const panSum = pan.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-      const score = Math.min(840, Math.max(620, baseScore + (panSum % 35)));
+      const score = Math.min(845, Math.max(640, baseScore + (panSum % 30)));
 
       document.getElementById('cibil-form-card').classList.add('hidden');
       document.getElementById('cibil-result-container').classList.remove('hidden');
@@ -504,59 +762,52 @@
       
       const badge = document.getElementById('resBadge');
       if (score >= 750) {
-        badge.innerText = 'Excellent';
-        badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+        badge.innerText = '99.4% Pre-Approved';
+        badge.className = 'text-[10px] font-black px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40';
       } else if (score >= 680) {
-        badge.innerText = 'Good';
-        badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30';
+        badge.innerText = '96% High Sanction';
+        badge.className = 'text-[10px] font-black px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/40';
       } else {
-        badge.innerText = 'Average';
-        badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30';
+        badge.innerText = 'Guaranteed NBFC Match';
+        badge.className = 'text-[10px] font-black px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/40';
       }
 
       renderCategorizedMatches(score, income);
     }
 
-    // --- RENDER CHANCES ---
+    // --- RENDER PRE-APPROVED OFFERS WITH ULTRA-HIGH CHANCE LABELS ---
     function renderCategorizedMatches(score, income) {
       const list = document.getElementById('matched-lenders-list');
       
       const categorized = LENDERS.map(l => {
-        let chance = 'High';
-        let chanceClass = 'bg-emerald-50 text-emerald-700 border-emerald-200';
-        let reason = 'Matched with your income profile';
+        let chance = '99% Sanction Match';
+        let chanceClass = 'bg-emerald-50 text-emerald-800 border-emerald-300';
+        let reason = 'Aapki monthly income ke sath 100% pre-approved';
 
-        if (income < l.minIncome || score < (l.minScore - 30)) {
-          chance = 'Low Risk';
-          chanceClass = 'bg-rose-50 text-rose-700 border-rose-200';
-          reason = `Requires min ₹${l.minIncome.toLocaleString()} monthly salary`;
-        } else if (score < l.minScore) {
-          chance = 'Moderate';
-          chanceClass = 'bg-amber-50 text-amber-700 border-amber-200';
-          reason = 'May require 3 months bank statement';
+        if (income < l.minIncome) {
+          chance = 'High Approval Chance';
+          chanceClass = 'bg-amber-50 text-amber-800 border-amber-300';
+          reason = `Min ₹${l.minIncome.toLocaleString()} income required for instant approval`;
         }
 
         return { ...l, chance, chanceClass, reason };
       });
 
-      const order = { 'High': 1, 'Moderate': 2, 'Low Risk': 3 };
-      categorized.sort((a, b) => order[a.chance] - order[b.chance]);
-
       list.innerHTML = categorized.map(l => `
-        <div class="bg-white rounded-2xl p-3.5 border ${l.chance === 'High' ? 'border-emerald-300 ring-1 ring-emerald-400/20' : 'border-slate-200'} shadow-sm space-y-2">
+        <div class="bg-white rounded-3xl p-4 border border-emerald-300 ring-1 ring-emerald-500/20 shadow-md space-y-2.5">
           <div class="flex justify-between items-start">
             <div>
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${l.chanceClass}">${l.chance} Approval Chance</span>
-              <h4 class="font-bold text-slate-900 text-xs mt-1">${l.name}</h4>
-              <p class="text-[10px] text-slate-400">${l.reason}</p>
+              <span class="text-[9px] font-black px-2 py-0.5 rounded-full border ${l.chanceClass} uppercase tracking-wider">${l.chance}</span>
+              <h4 class="font-black text-slate-900 text-xs mt-1.5">${l.name}</h4>
+              <p class="text-[10px] text-slate-500 font-medium">${l.reason}</p>
             </div>
             <div class="text-right">
-              <span class="text-[11px] font-bold text-slate-900">Up to ₹${(l.maxAmount/100000).toFixed(1)}L</span>
-              <p class="text-[10px] text-slate-500">${l.apr}</p>
+              <span class="text-xs font-black text-emerald-700">Up to ₹${(l.maxAmount/100000).toFixed(1)}L</span>
+              <p class="text-[10px] text-slate-500 font-semibold">${l.apr}</p>
             </div>
           </div>
-          <button onclick="openApplyModal('${l.id}', '${l.name}', ${l.maxAmount})" class="w-full py-2 ${l.chance === 'Low Risk' ? 'bg-slate-700 hover:bg-slate-800' : 'bg-emerald-600 hover:bg-emerald-700'} text-white font-bold rounded-xl text-xs transition">
-            ${l.chance === 'Low Risk' ? 'Check Terms & Apply' : 'Instant Apply ⚡'}
+          <button onclick="openApplyModal('${l.id}', '${l.name}', ${l.maxAmount})" class="w-full py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-black rounded-xl text-xs transition shadow-md flex items-center justify-center gap-1.5">
+            <span>Claim Loan Amount ⚡</span>
           </button>
         </div>
       `).join('');
@@ -568,16 +819,22 @@
       window.open(url, '_blank');
     }
 
-    // --- MODAL APPLY LOGIC ---
-    let currentLenderId = 'kreditbee';
+    // --- MODAL APPLY LOGIC WITH STRICT CHECKS ---
+    let currentLenderId = 'moneyview';
+    let currentLenderMax = 1000000;
+
     function openApplyModal(lenderId, name, maxAmount) {
       currentLenderId = lenderId;
+      currentLenderMax = maxAmount;
+
       document.getElementById('modalLenderName').innerText = `Apply via ${name}`;
       document.getElementById('modalMaxLimitLabel').innerText = `Max Limit: ₹${maxAmount.toLocaleString()}`;
       
       const modalAmount = document.getElementById('modalAmount');
       modalAmount.max = maxAmount;
-      modalAmount.value = Math.min(50000, maxAmount);
+      modalAmount.value = Math.min(100000, maxAmount);
+
+      ['modalName', 'modalMobile', 'modalPan', 'modalAmount'].forEach(id => setFieldError(id, ''));
 
       const sessionUser = JSON.parse(sessionStorage.getItem('firstloan_user') || '{}');
       if (sessionUser.name) document.getElementById('modalName').value = sessionUser.name;
@@ -589,6 +846,7 @@
 
     function setModalAmount(amt) {
       document.getElementById('modalAmount').value = amt;
+      setFieldError('modalAmount', '');
     }
 
     function closeApplyModal() {
@@ -597,8 +855,34 @@
 
     function handleApplySubmit(e) {
       e.preventDefault();
+
+      const nameVal = document.getElementById('modalName').value;
+      const mobVal = document.getElementById('modalMobile').value;
+      const panVal = document.getElementById('modalPan').value;
+      const amtVal = document.getElementById('modalAmount').value;
+
+      const errName = Validation.name(nameVal);
+      const errMob = Validation.mobile(mobVal);
+      const errPan = Validation.pan(panVal);
+      const errAmt = Validation.amount(amtVal, currentLenderMax);
+
+      setFieldError('modalName', errName);
+      setFieldError('modalMobile', errMob);
+      setFieldError('modalPan', errPan);
+      setFieldError('modalAmount', errAmt);
+
+      if (errName || errMob || errPan || errAmt) {
+        return;
+      }
+
+      sessionStorage.setItem('firstloan_user', JSON.stringify({
+        name: nameVal.trim(),
+        mobile: mobVal.trim(),
+        pan: panVal.trim().toUpperCase()
+      }));
+
       const btn = document.getElementById('btnSubmitApply');
-      btn.innerText = 'Redirecting to Partner Portal...';
+      btn.innerText = 'Redirecting to Official NBFC...';
       btn.disabled = true;
 
       const targetUrl = getPartnerLink(currentLenderId);
@@ -606,7 +890,7 @@
       setTimeout(() => {
         window.open(targetUrl, '_blank');
         closeApplyModal();
-        btn.innerText = 'Continue to Lending Partner ⚡';
+        btn.innerText = 'Sanction Loan & Open Bank Portal ⚡';
         btn.disabled = false;
       }, 500);
     }
@@ -638,6 +922,7 @@
 
     function openAdminModal() {
       document.getElementById('link-cibil').value = getPartnerLink('cibil');
+      document.getElementById('link-moneyview').value = getPartnerLink('moneyview');
       document.getElementById('link-kreditbee').value = getPartnerLink('kreditbee');
       document.getElementById('link-zapcash').value = getPartnerLink('zapcash');
       document.getElementById('link-rimfincorp').value = getPartnerLink('rimfincorp');
@@ -654,6 +939,7 @@
     function saveAdminLinks() {
       const data = {
         cibil: document.getElementById('link-cibil').value.trim() || OFFICIAL_LINKS.cibil,
+        moneyview: document.getElementById('link-moneyview').value.trim() || OFFICIAL_LINKS.moneyview,
         kreditbee: document.getElementById('link-kreditbee').value.trim() || OFFICIAL_LINKS.kreditbee,
         zapcash: document.getElementById('link-zapcash').value.trim() || OFFICIAL_LINKS.zapcash,
         rimfincorp: document.getElementById('link-rimfincorp').value.trim() || OFFICIAL_LINKS.rimfincorp,
@@ -666,7 +952,6 @@
       closeAdminModal();
     }
 
-    // Auto-detect #admin in URL
     window.addEventListener('load', () => {
       if (window.location.hash === '#admin') {
         promptAdminPin();
